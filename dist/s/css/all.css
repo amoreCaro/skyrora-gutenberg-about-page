@@ -14546,7 +14546,7 @@ blockquote p {
 }
 
 .leaders h2:not(:last-child) {
-    margin-bottom: 9rem
+    margin-bottom: 9rem !important
 }
 
 .launch-block [class^=" col-"],
@@ -16113,12 +16113,12 @@ blockquote p {
         font-size: 2rem
     }
     .leaders {
-        padding-top: 10rem;
-        padding-bottom: 10rem
+        padding-top: 100px;
+        padding-bottom: 100px
     }
     .article-terms .article-chapter:not(:last-child),
     .leaders h2:not(:last-child) {
-        margin-bottom: 5rem
+        margin-bottom: 50px
     }
     .leader-item__img:not(:last-child) {
         margin-bottom: 4.8rem
@@ -16382,16 +16382,16 @@ blockquote p {
     .info-item__info-content-top>span {
         font-size: 1.3rem
     }
-    .about__content p,
-    .about__content ul li span,
-    .article-landing ul li,
-    .info-item__info-content p,
-    .leader-item p {
-        font-size: 1.6rem
+    .acf-preview-block .about__content p,
+    .acf-preview-block .about__content ul li span,
+    .acf-preview-block .article-landing ul li,
+    .acf-preview-block .info-item__info-content p,
+    .acf-preview-block .leader-item p {
+        font-size: 16px !important;
     }
     .info-item__picture {
         min-height: initial;
-        height: 34rem
+        height: 340px
     }
     .info-item:not(.info-item--small) {
         margin-left: -2rem;

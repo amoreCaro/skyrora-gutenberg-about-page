@@ -596,8 +596,8 @@ mark {
 .container,
 .container-fluid {
     width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem
+    padding-right: 10px;
+    padding-left: 10px
 }
 
 .figure-img {
@@ -6709,10 +6709,10 @@ h6 {
         color: #fff
     }
     h1 {
-        font-size: 4rem
+        font-size: 40px
     }
     h2 {
-        font-size: 3.2rem
+        font-size: 32px
     }
 }
 
@@ -6975,8 +6975,8 @@ p {
         font-size: 1.8rem
     }
     .section {
-        padding-left: 1rem;
-        padding-right: 1rem
+        padding-left: 10px;
+        padding-right: 10px
     }
 }
 
@@ -7015,6 +7015,13 @@ p {
 .section {
     padding-top: 7.5rem;
     padding-bottom: 7.5rem
+}
+.banner--landing+.section {
+    padding-top: 150px;
+}
+
+.categories {
+    padding-bottom: 950px;
 }
 
 .section-top {
@@ -7151,7 +7158,7 @@ p {
 
 .grid-container--type1 {
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 2rem
+    grid-gap: 20px
 }
 
 @media (max-width:479px) {
@@ -7730,8 +7737,9 @@ p {
         grid-row-start: span 2
     }
     .grid-container--type1 .product:first-child .product__picture {
-        width: 15rem;
-        height: 81rem;
+        max-width: 150px;
+        width: 100%;
+        height: 810px;
         min-height: initial;
         -ms-flex-item-align: end;
         align-self: flex-end
@@ -12878,7 +12886,7 @@ textarea.form-control {
     .banner,
     .banner__content,
     .banner__video {
-        min-height: 74rem
+        min-height: 740px
     }
 }
 
@@ -12942,11 +12950,11 @@ textarea.form-control {
     }
     .banner,
     .banner__video {
-        min-height: 52rem
+        min-height: 520px
     }
     .banner__content {
         padding: 13rem 0 8rem;
-        min-height: 52rem
+        min-height: 520px
     }
     .banner__content-txt p {
         font-size: 1.6rem
@@ -13301,7 +13309,7 @@ textarea.form-control {
 }
 
 .categories {
-    margin-top: -15rem;
+    margin-top: -150px;
     padding-top: 0;
 }
 
@@ -13321,7 +13329,7 @@ textarea.form-control {
 .product {
     border: 1px solid #474a54;
     display: flex;
-    padding: 0 0 0 4rem;
+    padding: 0 0 0 40px;
     overflow: hidden;
     pointer-events: auto;
     -webkit-transition: background-color .5s, border-color .5s;
@@ -13340,7 +13348,7 @@ textarea.form-control {
     -ms-flex-positive: 1;
     flex-grow: 1;
     padding-right: 6px;
-    padding-top: 6rem;
+    padding-top: 60px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -13355,7 +13363,7 @@ textarea.form-control {
 }
 
 .product__info-read {
-    padding-bottom: 6rem;
+    padding-bottom: 60px;
     opacity: 0;
     -webkit-transition: .5s;
     transition: .5s
@@ -13383,6 +13391,12 @@ textarea.form-control {
     margin-bottom: 2rem
 }
 
+.acf-block-preview .product__info-top span {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
 .product__picture .spritespin,
 .product__picture .spritespin-canvas {
     position: absolute !important;
@@ -13395,8 +13409,8 @@ textarea.form-control {
 
 .product__info p {
     font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.6em;
+    font-size: 16px;
+    line-height: 29px;
     color: #fff
 }
 
@@ -13412,8 +13426,9 @@ textarea.form-control {
 }
 
 .product__picture {
-    width: 13rem;
-    min-height: 38rem;
+    max-width: 130px;
+    width: 100%;
+    min-height: 394px;
     -ms-flex-negative: 0;
     flex-shrink: 0;
     position: relative;
@@ -13475,12 +13490,13 @@ textarea.form-control {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 4rem 2rem 4rem 4rem
+    padding: 40px 20px 40px 40px
 }
 
 .product.product--horizontal .product__picture {
-    width: 22rem;
-    height: 22rem;
+    max-width: 220px;
+    width: 100%;
+    height: 220px;
     min-height: auto
 }
 
@@ -13567,12 +13583,12 @@ textarea.form-control {
 
 .product.product--horizontal .product__info-read {
     padding-bottom: 0;
-    padding-top: 4rem
+    padding-top: 40px
 }
 
 @media (max-width:1219px) {
     .product.product--horizontal .product__info-read {
-        padding-top: 2rem
+        padding-top: 20px
     }
 }
 
@@ -14512,8 +14528,8 @@ blockquote p {
     background: black;
 }
 
-.leaders h2:not(:last-child) {
-    margin-bottom: 9rem
+.acf-block-preview .leaders h2:not(:last-child) {
+    margin-bottom: 90px !important;
 }
 
 .launch-block [class^=" col-"],
@@ -16364,7 +16380,7 @@ blockquote p {
     .article-landing ul li,
     .info-item__info-content p,
     .leader-item p {
-        font-size: 1.6rem
+        font-size: 16px;
     }
     .info-item__picture {
         min-height: initial;
@@ -16454,8 +16470,9 @@ blockquote p {
         border-top: 1px solid #474a54
     }
     .leader-item__img {
-        width: 11rem;
-        height: 4.3rem
+        max-width: 110px;
+        width: 100%;
+        height: 43px
     }
     .leader-item__img:not(:last-child) {
         margin-bottom: 2.4rem
