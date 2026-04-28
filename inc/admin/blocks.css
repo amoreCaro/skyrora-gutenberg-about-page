@@ -564,7 +564,7 @@ mark {
 .container,
 .container-fluid {
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
 }
 
 .initialism {
@@ -10210,10 +10210,10 @@ textarea.form-control {
         height: auto
     }
     .grid-container--type1 .product {
-        min-height: 40rem
+        min-height: 400px
     }
     .grid-container--type1 .product__info p {
-        font-size: 1.6rem
+        font-size: 16px;
     }
     .filters__item-range-result-input {
         width: 80px
@@ -13326,7 +13326,7 @@ textarea.form-control {
 }
 
 .breadcrumbs__list li .icon {
-    margin-left: 1rem;
+    margin-left: 10px;
     font-size: 8px;
     display: block;
     color: #737680
@@ -13352,7 +13352,7 @@ textarea.form-control {
         display: none
     }
     .categories {
-        padding-bottom: 72rem !important
+        padding-bottom: 720px !important;
     }
 }
 
@@ -13458,7 +13458,8 @@ textarea.form-control {
 .product__picture {
     max-width: 130px;
     width: 100%;
-    min-height: 394px;
+    min-height: 380px;
+    height: auto;
     -ms-flex-negative: 0;
     flex-shrink: 0;
     position: relative;
@@ -13467,7 +13468,7 @@ textarea.form-control {
 
 @media (max-width:1219px) {
     .product {
-        padding: 1rem 1rem 0 4rem
+        padding: 10px 10px 0 40px !important;
     }
     .product__picture {
         margin-right: 0;
@@ -13545,14 +13546,19 @@ textarea.form-control {
         align-items: stretch
     }
     .product.product--horizontal .product__picture {
-        width: 12rem;
-        height: 12rem
+        max-width: 120px;
+        width: 100%;
+        height: 120px;
     }
     .product.product--horizontal .product__picture img,
     .product.product--horizontal .product__picture picture {
         top: 0;
         height: auto
     }
+}
+
+.banner--landing+.section {
+    padding-top: 150px;
 }
 
 @media (max-width:767px) {
@@ -13588,7 +13594,7 @@ textarea.form-control {
         margin-right: -2rem;
         -webkit-transform: translate(0) !important;
         transform: translate(0) !important;
-        padding-bottom: 20rem !important
+        padding-bottom: 200px !important
     }
     .product {
         padding: 2rem 1rem 0 2rem;
@@ -13596,15 +13602,16 @@ textarea.form-control {
         border-bottom: 1px solid #474a54
     }
     .product__info {
-        padding-right: 6.2rem;
-        padding-top: 4rem
+        padding-right: 62px;
+        padding-top: 40px;
     }
     .product.product--horizontal {
         padding: 4rem 1rem 4rem 2rem
     }
     .product.product--horizontal .product__picture {
-        width: 16rem;
-        height: 16rem
+        max-width: 160px;
+        width: 100%;
+        height: 160px;
     }
     .product.product--horizontal .product__info {
         padding-right: 1.2rem
