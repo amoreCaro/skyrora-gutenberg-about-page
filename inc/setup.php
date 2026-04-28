@@ -35,3 +35,23 @@ function skyrora_theme_assets() {
     );
 }
 add_action('wp_enqueue_scripts', 'skyrora_theme_assets');
+
+
+/**
+ * Allow only custom ACF blocks in Gutenberg editor.
+ *
+ * Removes default WordPress blocks.
+ **/
+add_filter('allowed_block_types_all', 'theme_allowed_blocks', 20, 2);
+
+function theme_allowed_blocks($allowed_blocks, $editor_context)
+{
+    return array(
+        'acf/banner',
+        'acf/products',
+        'acf/innovation',
+        'acf/dedicated',
+        'acf/news',
+        'acf/leaders',
+    );
+}
