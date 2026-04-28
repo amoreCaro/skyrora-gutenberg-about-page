@@ -1,0 +1,20 @@
+.banner:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #00020e;
+    opacity: .5;
+    z-index: 0;
+}
+
+.banner__content {
+    z-index: 99 !important;
+}
+
+#mainPageCategoriesId {
+    z-index: 99;
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WordPress core
 wp-admin/
 wp-includes/
@@ -34,3 +35,9 @@ git-helper.html
 .env.*.local
 
 **/node_modules/
+=======
+*.mp4
+*.webm
+node_modules/
+dist/s/images/useful/
+>>>>>>> dev
