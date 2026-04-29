@@ -7,11 +7,15 @@ if (!defined('ABSPATH')) {
 /**
  * Block Name: Preview
  */
+
 ?>
 <section class="section--nextIsVideo section about-dedicated-mod js-viewport-checker checker-visible"
-    <?php if( get_field('dedicated_image') ) : ?>
-        style="background-image: url('<?php echo esc_url( wp_get_attachment_image_url(get_field('dedicated_image'), 'full') ); ?>');"
-    <?php endif; ?>>
+    <?php if ( get_field('dedicated_background_type') === 'image' ) : ?>
+        style="background-image: url('<?php echo esc_url( wp_get_attachment_image_url( get_field('dedicated_background_image'), 'full' ) ); ?>');"
+    <?php elseif ( get_field('dedicated_background_type') === 'color' ) : ?>
+        style="background-image: none; background-color: <?php echo esc_attr( get_field('dedicated_background_color') ); ?>;"
+    <?php endif; ?>
+    >
 
     <div class="container">
         <div class="about-dedicated__inner">
@@ -44,13 +48,12 @@ if (!defined('ABSPATH')) {
                         <?php endwhile; ?>
                     </ul>
                 <?php endif; ?>
-
                 <button type="button" data-popup-name="popup-book" class="button button--blue js-popup-btn">
                     <span>
-                        <?php skyrora_print_escaped_field('dedicated_button_text'); ?>
+                        <?php echo esc_html( get_field('dedicated_button_text') ); ?>
                     </span>
-                    <svg width="1em" height="1em" class="icon icon-arrow-right ">
-                        <use xlink:href="<?=THEME?>/dist/s/images/useful/svg/theme/symbol-defs.svg#icon-arrow-right"></use>
+                    <svg width="1em" height="1em" class="icon icon-arrow-right">
+                        <use xlink:href="<?php echo THEME; ?>/dist/s/images/useful/svg/theme/symbol-defs.svg#icon-arrow-right"></use>
                     </svg>
                 </button>
             </div>

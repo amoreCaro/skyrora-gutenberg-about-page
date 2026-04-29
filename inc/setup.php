@@ -1,14 +1,11 @@
 <?php
 
-<<<<<<< HEAD
+
 // Security: no direct access
 if ( ! defined('ABSPATH') ) {
     exit;
 }
 
-/* -------------------------------------------------
- * Theme setup
- * ------------------------------------------------- */
 
 if ( ! function_exists('theme_setup') ) {
     function theme_setup() {
@@ -263,7 +260,7 @@ add_action('pre_get_posts', function ($query) {
 
     $query->set('post_type', 'post');
 });
-=======
+
 if (!defined('ABSPATH')) exit;
 
 /**
@@ -319,4 +316,3 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
         'acf/leaders',
     );
 }
->>>>>>> dev
