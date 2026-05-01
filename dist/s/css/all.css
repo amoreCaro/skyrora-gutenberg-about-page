@@ -239,7 +239,7 @@ figure {
 }
 
 img {
-    border-style: none
+    border-style: none;
 }
 
 svg {
@@ -302,6 +302,11 @@ select {
 [type=submit],
 button {
     -webkit-appearance: button
+}
+
+.about__video.about--image  img{
+    width: 100%;
+    
 }
 
 [type=button]::-moz-focus-inner,
@@ -1390,6 +1395,7 @@ pre code {
 .table-primary>th {
     background-color: #b8daff
 }
+
 
 .table-primary tbody+tbody,
 .table-primary td,
@@ -11964,8 +11970,10 @@ textarea.form-control {
 }
 
 .banner__video [data-prevent-transform=true] {
-    opacity: 0
+    opacity: 1;
+    transform: none !important;
 }
+
 
 .banner__content {
     position: relative;

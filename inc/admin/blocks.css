@@ -180,7 +180,7 @@ figure {
 }
 
 img {
-    border-style: none
+    border-style: none;
 }
 
 svg {
@@ -286,6 +286,14 @@ legend {
     margin-bottom: .5rem;
     font-size: 1.5rem;
     white-space: normal
+}
+
+.about__video.about--image {
+    height: 928px;
+}
+
+.about__video.about--image  img{
+    width: 100%;
 }
 
 [type=number]::-webkit-inner-spin-button,
@@ -480,7 +488,7 @@ hr {
 
 .acf-block-preview .h1,
 .acf-block-preview h1 {
-    font-size: 7rem
+    font-size: 70px;
 }
 
 .acf-block-preview .h2,

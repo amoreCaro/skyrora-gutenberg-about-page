@@ -7,20 +7,25 @@ if (!defined('ABSPATH')) {
 /**
  * Block Name: Banner
  */
+
 ?>
 
-<section id="section-<?php echo esc_attr(get_row_index()); ?>" class="banner--landing banner--description section banner js-viewport-checker">
+<section id="section-<?php echo esc_attr(get_row_index()); ?>" class="banner--landing banner--description section banner js-viewport-checker"<?php if (get_field('banner_media_type') === 'color' && get_field('banner_background_color')) { echo ' style="background-color: ' . esc_attr(get_field('banner_background_color')) . ';"'; } ?>>
 
-    <?php if (get_field('banner_media_type') === 'video') { ?>
-        <div id="bannerVideoId"
-             data-src="<?php skyrora_print_escaped_field('banner_video', 'url'); ?>"
-             class="banner__video">
 
-            <video autoplay playsinline muted loop class="bv-video" data-prevent-transform="true">
-                <source src="<?php skyrora_print_escaped_field('banner_video', 'url'); ?>" type="video/mp4" />
-            </video>
+<?php if (get_field('banner_media_type') === 'video') { 
+    $video_url = get_field('banner_video');
+?>
+    <div id="bannerVideoId"
+         data-src="<?php echo esc_url($video_url); ?>"
+         class="banner__video">
 
-        </div>
+        <video autoplay playsinline muted loop class="bv-video" data-prevent-transform="true">
+            <source src="<?php echo esc_url($video_url); ?>" type="video/mp4" />
+        </video>
+
+    </div>
+
     <?php } else { ?>
 
         <div id="bannerVideoId"

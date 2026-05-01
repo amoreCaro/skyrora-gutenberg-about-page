@@ -17,6 +17,7 @@ if (!defined('ABSPATH')) {
         } else if (get_field('innovation_media_type') === 'image') { 
             get_template_part('blocks/innovation/templates/background');
         } 
+        
         ?>
 
         <div class="container">
