@@ -102,6 +102,16 @@ function theme_acf_blocks() {
             'icon'            => $icon,
             'keywords'        => array('title', 'heading'),
         ));
+
+        acf_register_block_type(array(
+            'name'            => 'quote',
+            'title'           => 'Block - Quote',
+            'category'        => 'skyrora',
+            'render_template' => PATH . '/blocks/quote/preview.php',
+            'mode'            => 'preview',
+            'icon'            => $icon,
+            'keywords'        => array('quote', 'blockquote'),
+        ));
     }
 }
 
