@@ -7,9 +7,14 @@ $categories      = get_the_category();
 $first_category  = ! empty( $categories ) ? $categories[0] : null;
 $title           = get_the_title();
 $is_front_page   = is_front_page();
+$is_page         = is_page() && ! $is_front_page;
+$ancestors       = $is_page ? array_reverse( get_post_ancestors( get_the_ID() ) ) : [];
+$show            = $is_front_page || ( $first_category && $title ) || ( $is_page && $title );
+
+$chevron = '<svg class="w-4 h-4 text-[#9CA3AF] dark:text-white/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6" /></svg>';
 ?>
 
-<?php if ( $is_front_page || ( $first_category && $title ) ) : ?>
+<?php if ( $show ) : ?>
 <nav class="breadcrumbs max-w-[800px] mx-auto pt-8 pb-8 hidden sm:block xl:pl-0"
      aria-label="Breadcrumb">
      
@@ -43,46 +48,83 @@ $is_front_page   = is_front_page();
 
                 <meta itemprop="position" content="1" />
 
-                <svg class="w-4 h-4 text-[#9CA3AF] dark:text-white/40" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 18l6-6-6-6" />
-                </svg>
+                <?php echo $chevron; ?>
             </li>
 
-            <!-- Category -->
-            <li class="flex items-center gap-x-4"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem">
+            <?php if ( $is_page ) : ?>
+                <?php
+                $position = 2;
+                foreach ( $ancestors as $ancestor_id ) :
+                ?>
+                    <li class="flex items-center gap-x-4"
+                        itemprop="itemListElement"
+                        itemscope
+                        itemtype="https://schema.org/ListItem">
 
-                <a href="<?php echo esc_url( get_category_link( $first_category->term_id ) ); ?>"
-                   itemprop="item"
-                   class="transition-colors duration-300 capitalize text-[#374151] dark:text-white hover:text-blue-400 dark:hover:text-blue-400">
+                        <a href="<?php echo esc_url( get_permalink( $ancestor_id ) ); ?>"
+                           itemprop="item"
+                           class="transition-colors duration-300 capitalize text-[#374151] dark:text-white hover:text-blue-400 dark:hover:text-blue-400">
+                            <span itemprop="name">
+                                <?php echo esc_html( get_the_title( $ancestor_id ) ); ?>
+                            </span>
+                        </a>
+
+                        <meta itemprop="position" content="<?php echo esc_attr( (string) $position ); ?>" />
+
+                        <?php echo $chevron; ?>
+                    </li>
+                <?php
+                    $position++;
+                endforeach;
+                ?>
+
+                <li class="text-[#9CA3AF] dark:text-white/40"
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="https://schema.org/ListItem">
+
                     <span itemprop="name">
-                        <?php echo esc_html( $first_category->name ); ?>
+                        <?php echo esc_html( $title ); ?>
                     </span>
-                </a>
 
-                <meta itemprop="position" content="2" />
+                    <meta itemprop="position" content="<?php echo esc_attr( (string) $position ); ?>" />
+                </li>
 
-                <svg class="w-4 h-4 text-[#9CA3AF] dark:text-white/40" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 18l6-6-6-6" />
-                </svg>
-            </li>
+            <?php else : ?>
 
-            <!-- Current post -->
-            <li class="text-[#9CA3AF] dark:text-white/40"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem">
+                <!-- Category -->
+                <li class="flex items-center gap-x-4"
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="https://schema.org/ListItem">
 
-                <span itemprop="name">
-                    <?php echo esc_html( $title ); ?>
-                </span>
+                    <a href="<?php echo esc_url( get_category_link( $first_category->term_id ) ); ?>"
+                       itemprop="item"
+                       class="transition-colors duration-300 capitalize text-[#374151] dark:text-white hover:text-blue-400 dark:hover:text-blue-400">
+                        <span itemprop="name">
+                            <?php echo esc_html( $first_category->name ); ?>
+                        </span>
+                    </a>
 
-                <meta itemprop="position" content="3" />
-            </li>
+                    <meta itemprop="position" content="2" />
+
+                    <?php echo $chevron; ?>
+                </li>
+
+                <!-- Current post -->
+                <li class="text-[#9CA3AF] dark:text-white/40"
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="https://schema.org/ListItem">
+
+                    <span itemprop="name">
+                        <?php echo esc_html( $title ); ?>
+                    </span>
+
+                    <meta itemprop="position" content="3" />
+                </li>
+
+            <?php endif; ?>
 
         <?php endif; ?>
 

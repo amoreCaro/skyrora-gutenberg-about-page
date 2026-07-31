@@ -12,12 +12,12 @@ get_header();
         <section class="bento-grid mx-auto bg-[#F6F5F8] dark:bg-[#0B0B0D] lg:pt-[120px] pt-[120px] lg:pb-[100px] pb-[50px] px-5 xl:px-10 2xl:px-0">
 
             <div class="container mb-10">
-<div class="container mb-10">
-    <h1 class="text-black dark:text-white text-[32px] md:text-[40px] font-semibold">
-        <?php _e("Results for:", THEME); ?>
-        <?php echo esc_html(get_query_var('s')); ?>
-    </h1>
-</div>
+                <div class="container mb-10">
+                    <h1 class="text-black dark:text-white text-[32px] md:text-[40px] font-semibold">
+                        <?php _e("Results for:", THEME); ?>
+                        <?php echo esc_html(get_query_var('s')); ?>
+                    </h1>
+                </div>
             </div>
 
             <div class="space-y-8 md:space-y-12 container">

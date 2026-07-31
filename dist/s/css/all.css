@@ -13886,15 +13886,14 @@ blockquote:not(:last-child) {
     }
 }
 
-.about:after {
+/* .about:after {
     position: absolute;
     top: 28rem;
     left: 0;
     width: 100%;
     height: calc(100% - 28rem);
-    background-color: #f4f5ff;
     content: " "
-}
+} */
 
 @media (max-width:1024px) {
     .about:after {
@@ -14665,7 +14664,6 @@ blockquote p {
 }
 
 .news {
-    background-color: #f3f3f5;
     padding-top: 15rem;
     padding-bottom: 10rem
 }

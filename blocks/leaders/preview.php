@@ -8,7 +8,8 @@ if (!defined('ABSPATH')) {
  */
 ?>
 
-<section class="section leaders js-viewport-checker">
+<section class="section leaders js-viewport-checker"     
+        style="background-color: <?php echo esc_attr( get_field('leaders_background_color') ); ?>;">
     <div class="container">
         
         <?php if( get_field('leaders_title') ){ ?>

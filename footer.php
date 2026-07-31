@@ -19,13 +19,7 @@ $columns = get_field('acf_footer_column','option');
                     !is_singular('personal') and
                     !is_paged()
                   ){ ?>
-      <div class="breadcrumbs">
-        <div class="breadcrumbs__inner">
-          <?php 
-                        the_breadcrumbs();
-                    ?>
-        </div>
-      </div>
+
       <?php } else { ?>
       <?php if( !is_home() and !is_front_page() and !is_singular('post') and !is_paged() ){ ?>
       <div class="breadcrumbs">

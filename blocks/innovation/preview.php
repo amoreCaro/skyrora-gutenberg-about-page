@@ -8,7 +8,8 @@ if (!defined('ABSPATH')) {
  */
 ?>
 
-<section class="section about js-viewport-checker">
+<section class="section about js-viewport-checker"
+        style="background-color: <?php echo esc_attr( get_field('innovation_background_color') ); ?>;">
     <div class="about__inner">
         
         <?php 
@@ -36,8 +37,8 @@ if (!defined('ABSPATH')) {
                         </article>
                     </div>
 
-                    <div class="col-md-10 col-24">
-                        <?php if ( have_rows('innovation_list') ): ?>
+                    <?php if ( have_rows('innovation_list') ): ?>
+                        <div class="col-md-10 col-24">
                             <ul>
                                 <?php while ( have_rows('innovation_list') ): the_row(); ?>
                                     <?php if ( get_sub_field('innovation_list_text') ): ?>
@@ -47,8 +48,8 @@ if (!defined('ABSPATH')) {
                                     <?php endif; ?>
                                 <?php endwhile; ?>
                             </ul>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
