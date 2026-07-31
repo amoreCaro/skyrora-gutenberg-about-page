@@ -132,6 +132,16 @@ function theme_acf_blocks() {
             'icon'            => $icon,
             'keywords'        => array('partners', 'logos'),
         ));
+
+        acf_register_block_type(array(
+            'name'            => 'paragraph',
+            'title'           => 'Block - Paragraph',
+            'category'        => 'skyrora',
+            'render_template' => PATH . '/blocks/paragraph/preview.php',
+            'mode'            => 'preview',
+            'icon'            => $icon,
+            'keywords'        => array('paragraph', 'text'),
+        ));
     }
 }
 
