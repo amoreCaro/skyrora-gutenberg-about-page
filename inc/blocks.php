@@ -92,6 +92,16 @@ function theme_acf_blocks() {
             'icon'            => $icon,
             'keywords'        => array('leaders'),
         ));
+
+        acf_register_block_type(array(
+            'name'            => 'title',
+            'title'           => 'Block - Title',
+            'category'        => 'skyrora',
+            'render_template' => PATH . '/blocks/title/preview.php',
+            'mode'            => 'preview',
+            'icon'            => $icon,
+            'keywords'        => array('title', 'heading'),
+        ));
     }
 }
 

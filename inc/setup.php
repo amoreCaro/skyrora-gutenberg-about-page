@@ -314,5 +314,6 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
         'acf/dedicated',
         'acf/news',
         'acf/leaders',
+        'acf/title',
     );
 }
