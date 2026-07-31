@@ -319,5 +319,6 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
         'acf/partners',
         'acf/news-about',
         'acf/paragraph',
+        'acf/corporate-value',
     );
 }
