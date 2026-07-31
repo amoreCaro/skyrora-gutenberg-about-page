@@ -315,5 +315,6 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
         'acf/news',
         'acf/leaders',
         'acf/title',
+        'acf/quote',
     );
 }
