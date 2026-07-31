@@ -318,5 +318,6 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
         'acf/quote',
         'acf/partners',
         'acf/news-about',
+        'acf/paragraph',
     );
 }
