@@ -122,6 +122,16 @@ function theme_acf_blocks() {
             'icon'            => $icon,
             'keywords'        => array('partners', 'logos'),
         ));
+
+        acf_register_block_type(array(
+            'name'            => 'news-about',
+            'title'           => 'Block - News About',
+            'category'        => 'skyrora',
+            'render_template' => PATH . '/blocks/news-about/preview.php',
+            'mode'            => 'preview',
+            'icon'            => $icon,
+            'keywords'        => array('partners', 'logos'),
+        ));
     }
 }
 
