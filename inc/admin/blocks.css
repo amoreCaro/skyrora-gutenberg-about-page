@@ -13893,6 +13893,15 @@ blockquote:not(:last-child) {
     }
 }
 
+.about:after {
+    position: absolute;
+    top: 28rem;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 28rem);
+    background-color: #f4f5ff;
+    content: " "
+}
 
 @media (max-width:1024px) {
     .about:after {
@@ -13915,37 +13924,47 @@ blockquote:not(:last-child) {
 .pagination a.active {
     pointer-events: none
 }
+
 .acf-block-preview .button--bordered:hover {
     background: #2a5dea;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
 }
 
+.about__video {
+    width: 100%;
+    max-width: 165rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    min-height: 34rem
+}
+
+/* Editor: rem base differs from frontend (html 10px), use px heights */
 .acf-block-preview .about__video {
-  width: 100%;
-  max-width: 1650px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  min-height: 22rem;
-  height: auto;
+    width: 100%;
+    max-width: 1650px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    min-height: 22rem;
+    height: auto;
 }
 
 @media (min-width: 1440px) {
-  .acf-block-preview .about__video {
-    min-height: 810px;
-  }
+    .acf-block-preview .about__video {
+        min-height: 810px;
+    }
 }
 
 @media (min-width: 1600px) {
-  .acf-block-preview .about__video {
-    min-height: 928px;
-  }
+    .acf-block-preview .about__video {
+        min-height: 928px;
+    }
 }
 
-
 .about__video:not(:last-child) {
-    margin-bottom: 100px
+    margin-bottom: 10rem
 }
 
 .about__video:after {

@@ -30,7 +30,7 @@ function theme_gutenberg_scripts() {
         'blocks',
         THEME . '/inc/admin/blocks.js',
         ['jquery', 'rellax', 'viewport-checker'],
-        '1.0',
+        '1.1',
         true
     );
 }
