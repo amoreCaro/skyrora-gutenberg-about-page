@@ -111,6 +111,26 @@ function skyrora_print_escaped_field($field_name, $type = 'html')
 	}
 }
 
+/**
+ * Incremental section index for Gutenberg blocks.
+ *
+ * ACF get_row_index() only works inside flexible/repeater rows.
+ * In block templates it always returns 1, so navigation anchors break.
+ * This counter mirrors flexible-content row indexes across rendered blocks.
+ *
+ * @return int
+ */
+function skyrora_section_index()
+{
+	if (!isset($GLOBALS['skyrora_section_index'])) {
+		$GLOBALS['skyrora_section_index'] = 0;
+	}
+
+	$GLOBALS['skyrora_section_index']++;
+
+	return (int) $GLOBALS['skyrora_section_index'];
+}
+
 function theme_allow_svg_upload($mimes) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;

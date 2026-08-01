@@ -152,6 +152,16 @@ function theme_acf_blocks() {
             'icon'            => $icon,
             'keywords'        => array('corporate', 'value', 'values'),
         ));
+
+        acf_register_block_type(array(
+            'name'            => 'hero',
+            'title'           => 'Block - Hero',
+            'category'        => 'skyrora',
+            'render_template' => PATH . '/blocks/hero/preview.php',
+            'mode'            => 'preview',
+            'icon'            => $icon,
+            'keywords'        => array('hero', 'banner', 'landing'),
+        ));
     }
 }
 

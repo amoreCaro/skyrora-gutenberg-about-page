@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<section id="section-<?php echo esc_attr(get_row_index()); ?>" class="banner--landing banner--description section banner js-viewport-checker"<?php if (get_field('banner_media_type') === 'color' && get_field('banner_background_color')) { echo ' style="background-color: ' . esc_attr(get_field('banner_background_color')) . ';"'; } ?>>
+<section id="section-<?php echo esc_attr( skyrora_section_index() ); ?>" class="banner--landing banner--description section banner js-viewport-checker"<?php if (get_field('banner_media_type') === 'color' && get_field('banner_background_color')) { echo ' style="background-color: ' . esc_attr(get_field('banner_background_color')) . ';"'; } ?>>
 
 
 <?php if (get_field('banner_media_type') === 'video') { 

@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
  * Block Name: Partners
  */
 ?>
-<div class="partners">
+<div class="partners" id="section-<?php echo esc_attr( skyrora_section_index() ); ?>">
     <div class="container">
         <div class="partners__inner">
 
