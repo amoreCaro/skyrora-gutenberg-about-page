@@ -321,5 +321,6 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
         'acf/paragraph',
         'acf/corporate-value',
         'acf/hero',
+        'acf/video',
     );
 }

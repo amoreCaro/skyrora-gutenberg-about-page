@@ -21,10 +21,6 @@
     background-color: #00020e !important
 }
 
-.about__video:after {
-    display: none;
-}
-
 .news p,
 .section__dark-template .media-menu__tags-btn .icon,
 .section__dark-template .media-menu__tags-btn span,
