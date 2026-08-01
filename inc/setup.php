@@ -320,5 +320,6 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
         'acf/news-about',
         'acf/paragraph',
         'acf/corporate-value',
+        'acf/hero',
     );
 }

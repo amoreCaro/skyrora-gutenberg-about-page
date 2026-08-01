@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
  * Block Name: Corporate Value
  */
 ?>
-<div id="section-<?php echo esc_attr( get_row_index() ); ?>" class="container constructor-columns">
+<div id="section-<?php echo esc_attr( skyrora_section_index() ); ?>" class="container constructor-columns">
     <div class="row">
         <?php if ( have_rows('corporate_value_items') ) : ?>
             <?php while ( have_rows('corporate_value_items') ) : the_row(); ?>

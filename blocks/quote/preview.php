@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 $quote_text = get_field('quote_text');
 ?>
 
-<div id="section-<?php echo get_row_index(); ?>"  class="container article-container">
+<div id="section-<?php echo esc_attr( skyrora_section_index() ); ?>"  class="container article-container">
     <article class="article-landing article-landing--long">
         <?php if ( $quote_text ) : ?>
             <blockquote>
