@@ -162,6 +162,16 @@ function theme_acf_blocks() {
             'icon'            => $icon,
             'keywords'        => array('hero', 'banner', 'landing'),
         ));
+
+        acf_register_block_type(array(
+            'name'            => 'video',
+            'title'           => 'Block - Video',
+            'category'        => 'skyrora',
+            'render_template' => PATH . '/blocks/video/preview.php',
+            'mode'            => 'preview',
+            'icon'            => $icon,
+            'keywords'        => array('video', 'media'),
+        ));
     }
 }
 
