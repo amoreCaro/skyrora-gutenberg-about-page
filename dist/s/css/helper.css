@@ -189,10 +189,6 @@
     }
 }
 
-.logged-in header {
-    top: 30px
-}
-
 .footer__content-main li:first-child span {
     font-weight: 700;
     font-size: 1.3rem;
