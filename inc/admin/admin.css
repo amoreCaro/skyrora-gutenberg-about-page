@@ -68,6 +68,10 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
     background: #e8e8e8;
 }
 
+.logged-in header {
+    top: 30px;
+}
+
 .wp-block-post-content {
     background: black;
 }
