@@ -6652,16 +6652,13 @@ body {
 
 .acf-block-preview {
     height: 100%;
-    font-size: 10px
-}
-
-.acf-block-preview {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100%;
     letter-spacing: .015rem;
-    font-size: 12px;
-    font-family: 'Bai Jamjuree';
+    /* Match frontend html { font-size: 10px } so rem units resolve the same */
+    font-size: 10px;
+    font-family: 'Bai Jamjuree', sans-serif;
     color: #fff;
     overflow-x: hidden;
 }
@@ -6747,9 +6744,9 @@ h2:not(:last-child) {
     }
 }
 
-h3:not(:last-child),
-h4:not(:last-child),
-p:not(:last-child) {
+.acf-block-preview h3:not(:last-child),
+.acf-block-preview h4:not(:last-child),
+.acf-block-preview p:not(:last-child) {
     margin-bottom: 2rem
 }
 
@@ -6761,11 +6758,11 @@ h6:not(:last-child) {
     margin-bottom: 1rem
 }
 
-p {
+.acf-block-preview p {
     margin-top: 0;
     font-weight: 500;
     font-size: 18px;
-    line-height: 29px !important;
+    line-height: 1.6em;
 }
 
 .h-object-fit {
@@ -13879,9 +13876,12 @@ textarea.form-control {
 .article-simple-quote:not(:last-child),
 .landing-video:not(:last-child),
 .leaders-container:not(:last-child),
-.technologies__content .info-item:not(:last-child),
-blockquote:not(:last-child) {
+.technologies__content .info-item:not(:last-child) {
     margin-bottom: 5rem
+}
+
+.acf-block-preview blockquote:not(:last-child) {
+    margin-bottom: 50px
 }
 
 .about {
@@ -14216,7 +14216,7 @@ blockquote:not(:last-child) {
 }
 
 .about__content strong,
-blockquote p {
+.acf-block-preview blockquote p {
     font-weight: 600
 }
 
@@ -14542,24 +14542,26 @@ blockquote p {
     position: relative
 }
 
-blockquote {
+.acf-block-preview blockquote {
     margin: 0;
-    padding: 0 0 0 5rem;
+    padding: 0 0 0 50px;
     border-left: 3px solid #2a5dea
 }
 
-blockquote p {
-    font-size: 2.2rem;
-    line-height: 1.4em
+.acf-block-preview blockquote p {
+    font-size: 22px;
+    line-height: 31px;
+    font-weight: 600;
+    color: #fff;
 }
 
-.article-simple-quote blockquote {
+.acf-block-preview .article-simple-quote blockquote {
     padding: 0;
     border-left: none
 }
 
-.article-simple-quote blockquote p {
-    font-size: 2.4rem
+.acf-block-preview .article-simple-quote blockquote p {
+    font-size: 24px
 }
 
 @media (min-width:1025px) {
@@ -16285,12 +16287,14 @@ blockquote p {
         left: 0;
         bottom: 5rem
     }
-    blockquote {
-        padding: 0 0 0 2rem
+    /* Editor canvas is often <767px; keep desktop quote padding (50px = 5rem on front) */
+    .acf-block-preview blockquote,
+    .acf-block-preview .article-landing--long blockquote {
+        padding: 0 0 0 50px
     }
     .parameters-list>ul>li>span:last-child,
-    blockquote p {
-        font-size: 2rem
+    .acf-block-preview blockquote p {
+        font-size: 20px
     }
     .leaders {
         padding-top: 100px;

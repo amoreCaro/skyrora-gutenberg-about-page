@@ -117,7 +117,7 @@
              bg-[#F3F4F6] dark:bg-white/5 rounded-r-xl pr-6;
 
       p {
-        @apply font-medium italic text-[24px] leading-relaxed
+        @apply font-medium italic text-[24px] leading-[31px]
                text-black dark:text-white my-0;
       }
 
