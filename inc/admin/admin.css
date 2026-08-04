@@ -64,6 +64,35 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
     overflow: visible !important;
 }
 
+/*
+ * Editor only: .banner__video is position:absolute; height:85vh on the
+ * frontend (spills under the next section). Clip it here so it does not
+ * cover the quote/paragraph block below in Gutenberg.
+ */
+.block-editor-block-list__block.wp-block-acf-hero,
+.wp-block-acf-hero,
+.wp-block-acf-hero .acf-block-preview,
+.acf-block-preview .banner.banner--landing {
+    overflow: hidden !important;
+}
+
+.acf-block-preview .banner.banner--landing .banner__video {
+    height: 100%;
+}
+
+/* 150px = 15rem at frontend html font-size: 10px */
+.wp-block-acf-hero + .wp-block-acf-quote .article-container,
+.wp-block-acf-hero + .wp-block-acf-paragraph .article-container {
+    padding-top: 150px;
+}
+
+@media (max-width: 767px) {
+    .wp-block-acf-hero + .wp-block-acf-quote .article-container,
+    .wp-block-acf-hero + .wp-block-acf-paragraph .article-container {
+        padding-top: 100px;
+    }
+}
+
 .editor-styles-wrapper.block-editor-writing-flow {
     background: #e8e8e8;
 }
@@ -88,4 +117,74 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
 .block-editor-tabbed-sidebar__tablist {
     mask-image: none !important;
     -webkit-mask-image: none !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* Article landing — editor-only spacing (inside ACF preview iframe)   */
+/* .acf-block-component/.acf-block-body live outside the canvas iframe */
+/* so they cannot target <article> — use .acf-block-preview instead    */
+/* ------------------------------------------------------------------ */
+.acf-block-preview article.article-landing.article-landing--long {
+    padding-top: 150px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Quote block — isolated to ACF preview, match frontend (all.css)     */
+/* px values = frontend rem at html font-size: 10px                    */
+/* padding-left: 5rem → 50px (desktop); keep 50px in editor preview    */
+/* ------------------------------------------------------------------ */
+.acf-block-preview .article-landing--long blockquote,
+.acf-block-preview blockquote {
+    margin: 0;
+    padding: 0 0 0 50px;
+    border-left: 3px solid #2a5dea;
+    max-width: initial;
+}
+
+.acf-block-preview .article-landing--long blockquote p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 31px;
+    color: #fff;
+    max-width: initial;
+}
+
+.acf-block-preview .article-landing--long blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.acf-block-preview .article-landing--long blockquote ul {
+    max-width: initial;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.acf-block-preview .article-landing--long blockquote ul li,
+.acf-block-preview .article-landing--long ul li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
+    line-height: 1.6em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.acf-block-preview .article-landing--long blockquote ul li:not(:last-child),
+.acf-block-preview .article-landing--long ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.acf-block-preview .article-landing--long blockquote ul li::before,
+.acf-block-preview .article-landing--long ul li::before {
+    content: " ";
+    width: 8px;
+    height: 8px;
+    background-color: #2a5dea;
+    margin-right: 20px;
+    margin-top: 10px;
+    flex-shrink: 0;
 }

@@ -14,9 +14,7 @@ $quote_text = get_field('quote_text');
     <article class="article-landing article-landing--long">
         <?php if ( $quote_text ) : ?>
             <blockquote>
-                <p>
-                    <?php echo wp_kses_post( $quote_text ); ?>
-                </p>
+                <?php echo wp_kses_post( $quote_text ); ?>
             </blockquote>
         <?php endif; ?>
     </article>
