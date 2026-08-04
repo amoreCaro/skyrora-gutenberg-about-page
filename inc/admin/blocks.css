@@ -288,12 +288,16 @@ legend {
     white-space: normal
 }
 
-.about__video.about--image {
-    height: 928px;
-}
-
-.about__video.about--image  img{
-    width: 100%;
+.about__video.about--image picture,
+.about__video.about--image img {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 [type=number]::-webkit-inner-spin-button,
@@ -6852,7 +6856,7 @@ p {
     color: #fff
 }
 
-.main>section.section--nextIsVideo {
+.main>.section--nextIsVideo {
     padding-bottom: 45rem
 }
 
@@ -6860,13 +6864,13 @@ p {
     h1:not(:last-child) {
         margin-bottom: 30px
     }
-    .main>section.section--nextIsVideo {
+    .main>.section--nextIsVideo {
         padding-bottom: 40rem
     }
 }
 
 @media (max-width:1024px) {
-    .main>section.section--nextIsVideo {
+    .main>.section--nextIsVideo {
         padding-bottom: 250px
     }
     .banner__content-logo__item img {
@@ -7099,7 +7103,8 @@ p {
     margin-bottom: 1rem
 }
 
-.banner--landing+.section {
+.banner--landing+.section,
+.banner--landing+.article-container {
     padding-top: 15rem
 }
 
@@ -7117,7 +7122,7 @@ p {
     h3 {
         font-size: 2.2rem
     }
-    .main>section.section--nextIsVideo {
+    .main>.section--nextIsVideo {
         padding-bottom: 20rem
     }
     .main-error__top {
@@ -7218,7 +7223,8 @@ p {
     .section-top__txt p br {
         display: none
     }
-    .banner--landing+.section {
+    .banner--landing+.section,
+    .banner--landing+.article-container {
         padding-top: 100px
     }
     .acf-block-preview .leaders h2 {
@@ -13893,13 +13899,17 @@ blockquote:not(:last-child) {
     }
 }
 
+.section.about {
+    padding-top: 0
+}
+
 .about:after {
     position: absolute;
     top: 28rem;
     left: 0;
     width: 100%;
     height: calc(100% - 28rem);
-    background-color: #f4f5ff;
+    background-color: var(--about-bg, #f4f5ff);
     content: " "
 }
 
@@ -13938,6 +13948,18 @@ blockquote:not(:last-child) {
     margin-right: auto;
     position: relative;
     min-height: 34rem
+}
+
+.about__video.about--image picture,
+.about__video.about--image img {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover
 }
 
 /* Editor: rem base differs from frontend (html 10px), use px heights */
@@ -14208,7 +14230,9 @@ blockquote p {
     .about__video:after {
         width: calc(100% - 2rem)
     }
-    .about__video video {
+    .about__video video,
+    .about__video.about--image picture,
+    .about__video.about--image img {
         right: 1rem;
         left: 1rem;
         width: calc(100% - 2rem)

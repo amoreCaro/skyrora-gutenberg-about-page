@@ -2,177 +2,218 @@
 
 if (!defined('ABSPATH')) exit;
 
-// Register custom category Skyrora
+/**
+ * Build a block icon SVG with shared size, stroke and color.
+ */
+function skyrora_block_icon($paths) {
+    $color = '#3858E9';
+
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="' . $color . '" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' . $paths . '</svg>';
+}
+
+// Register only the Skyrora category (hide default WP categories).
 add_filter('block_categories_all', function($categories, $post) {
-    return array_merge(
+    return array(
         array(
-            array(
-                'slug'  => 'skyrora',
-                'title' => 'Skyrora',
-                'icon'  => null,
-            ),
+            'slug'  => 'skyrora',
+            'title' => 'Skyrora',
+            'icon'  => skyrora_block_icon('<path d="M4.5 16.5c2-1.5 3.5-4 3.5-7V6l4-3 4 3v3.5c0 3 1.5 5.5 3.5 7"/><path d="M9 14h6"/><path d="M10 19c.5 1.5 1.5 2.5 2 2.5s1.5-1 2-2.5"/>'),
         ),
-        $categories
     );
 }, 10, 2);
 
 
 function theme_acf_blocks() {
 
-    $icon = '<svg width="20" height="34" viewBox="0 0 20 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.99517 8.00002C9.84282 8.00104 9.69195 8.04362 9.55607 8.12966C9.4243 8.21161 6.29412 10.2279 6.29412 14.1942C6.29412 14.8511 6.46817 15.9154 6.67532 17.0128H6.54665C6.49156 17.0127 6.43659 17.018 6.38258 17.0288C6.38258 17.0288 5.54135 17.1938 4.70979 17.7779C3.87823 18.362 3 19.4736 3 21.1103C3.00002 21.3276 3.08679 21.536 3.24123 21.6897C3.39567 21.8434 3.60512 21.9297 3.82353 21.9298H16.1765C16.3949 21.9297 16.6043 21.8434 16.7588 21.6897C16.9132 21.536 17 21.3276 17 21.1103C17 19.4736 16.1218 18.362 15.2902 17.7779C14.4586 17.1938 13.6174 17.0288 13.6174 17.0288C13.5634 17.018 13.5084 17.0127 13.4534 17.0128H13.3199C13.5293 15.9013 13.7059 14.8224 13.7059 14.1606C13.7059 10.1861 10.5677 8.20361 10.4359 8.12166C10.3 8.03971 10.1475 7.99899 9.99517 8.00002ZM10 12.0959C10.6835 12.0959 11.2353 12.6449 11.2353 13.3251C11.2353 14.0053 10.6835 14.5543 10 14.5543C9.31647 14.5543 8.76471 14.0053 8.76471 13.3251C8.76471 12.6449 9.31647 12.0959 10 12.0959ZM6.67371 18.6518H7.00023C7.13293 19.2605 7.26378 19.8441 7.37017 20.2908H4.8449C5.02533 19.769 5.30184 19.3678 5.66039 19.116C6.17228 18.7564 6.64046 18.659 6.67371 18.6518ZM12.9966 18.6518H13.3263C13.3595 18.6591 13.8277 18.7564 14.3396 19.116C14.6982 19.3678 14.9747 19.769 15.1551 20.2908H12.6282C12.7338 19.845 12.8647 19.2591 12.9966 18.6518ZM8.76471 23.5687C8.76471 24.784 10 26 10 26C10 26 11.2353 24.784 11.2353 23.5687H8.76471Z" fill="black"/>
-            </svg>';
-
-    /**
-     * Register custom Gutenberg blocks using ACF.
-     *
-     * Checks whether ACF Pro is active and the block registration
-     * function exists, then registers custom theme blocks.
-     *
-     */
-    if (function_exists('acf_register_block_type')) {
-
-        acf_register_block_type(array(
-            'name'            => 'banner',
-            'title'           => 'Block - Banner',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/banner/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('banner'),
-            'enqueue_style'   => get_template_directory_uri() . '/blocks/banner/style.css',
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'products',
-            'title'           => 'Block - Products',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/products/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('products'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'innovation',
-            'title'           => 'Block - Innovation',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/innovation/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('innovation'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'dedicated',
-            'title'           => 'Block - Dedicated',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/dedicated/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('dedicated'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'news',
-            'title'           => 'Block - News',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/news/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('news'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'leaders',
-            'title'           => 'Block - Leaders',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/leaders/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('leaders'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'title',
-            'title'           => 'Block - Title',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/title/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('title', 'heading'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'quote',
-            'title'           => 'Block - Quote',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/quote/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('quote', 'blockquote'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'partners',
-            'title'           => 'Block - Partners',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/partners/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('partners', 'logos'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'news-about',
-            'title'           => 'Block - News About',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/news-about/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('partners', 'logos'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'paragraph',
-            'title'           => 'Block - Paragraph',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/paragraph/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('paragraph', 'text'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'corporate-value',
-            'title'           => 'Block - Corporate Value',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/corporate-value/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('corporate', 'value', 'values'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'hero',
-            'title'           => 'Block - Hero',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/hero/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('hero', 'banner', 'landing'),
-        ));
-
-        acf_register_block_type(array(
-            'name'            => 'video',
-            'title'           => 'Block - Video',
-            'category'        => 'skyrora',
-            'render_template' => PATH . '/blocks/video/preview.php',
-            'mode'            => 'preview',
-            'icon'            => $icon,
-            'keywords'        => array('video', 'media'),
-        ));
+    if (!function_exists('acf_register_block_type')) {
+        return;
     }
+
+    $icons = array(
+        'banner' => skyrora_block_icon(
+            '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 14l4-3 3 2 4-4 7 5"/>'
+        ),
+        'products' => skyrora_block_icon(
+            '<path d="M6 8h12l-1 11H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/>'
+        ),
+        'innovation' => skyrora_block_icon(
+            '<path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a5 5 0 0 1 3.5 8.5c-.7.6-1.1 1.4-1.3 2.3H9.8c-.2-.9-.6-1.7-1.3-2.3A5 5 0 0 1 12 3z"/>'
+        ),
+        'dedicated' => skyrora_block_icon(
+            '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>'
+        ),
+        'news' => skyrora_block_icon(
+            '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h5"/><path d="M8 12h8"/><path d="M8 16h8"/>'
+        ),
+        'leaders' => skyrora_block_icon(
+            '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3 2.5-4.5 5.5-4.5s5 1.5 5.5 4.5"/><path d="M15 14.5c2.2.2 3.8 1.4 4.5 4.5"/>'
+        ),
+        'title' => skyrora_block_icon(
+            '<path d="M6 7h12"/><path d="M12 7v10"/><path d="M9 17h6"/>'
+        ),
+        'quote' => skyrora_block_icon(
+            '<path d="M8 17H5a2 2 0 0 1-2-2v-3a4 4 0 0 1 4-4h1v5H5v2h3v2z"/><path d="M19 17h-3a2 2 0 0 1-2-2v-3a4 4 0 0 1 4-4h1v5h-3v2h3v2z"/>'
+        ),
+        'partners' => skyrora_block_icon(
+            '<circle cx="6" cy="8" r="2.5"/><circle cx="18" cy="8" r="2.5"/><circle cx="12" cy="17" r="2.5"/><path d="M8 9.5l2.5 5M16 9.5l-2.5 5M8.5 8h7"/>'
+        ),
+        'news-about' => skyrora_block_icon(
+            '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/>'
+        ),
+        'paragraph' => skyrora_block_icon(
+            '<path d="M13 4v16"/><path d="M17 4v16"/><path d="M13 4H9.5A3.5 3.5 0 0 0 9.5 11H13"/>'
+        ),
+        'corporate-value' => skyrora_block_icon(
+            '<path d="M12 3l2.2 4.5 5 .7-3.6 3.5.9 5L12 14.8 7.5 16.7l.9-5L4.8 8.2l5-.7L12 3z"/>'
+        ),
+        'hero' => skyrora_block_icon(
+            '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 3 2 4-3 6 5"/><circle cx="9" cy="9" r="1.25" fill="#3858E9" stroke="none"/>'
+        ),
+        'video' => skyrora_block_icon(
+            '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M10 9.5v5l4.5-2.5L10 9.5z" fill="#3858E9" stroke="none"/>'
+        ),
+    );
+
+    acf_register_block_type(array(
+        'name'            => 'banner',
+        'title'           => 'Block - Banner',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/banner/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['banner'],
+        'keywords'        => array('banner'),
+        'enqueue_style'   => get_template_directory_uri() . '/blocks/banner/style.css',
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'products',
+        'title'           => 'Block - Products',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/products/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['products'],
+        'keywords'        => array('products'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'innovation',
+        'title'           => 'Block - Innovation',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/innovation/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['innovation'],
+        'keywords'        => array('innovation'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'dedicated',
+        'title'           => 'Block - Dedicated',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/dedicated/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['dedicated'],
+        'keywords'        => array('dedicated'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'news',
+        'title'           => 'Block - News',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/news/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['news'],
+        'keywords'        => array('news'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'leaders',
+        'title'           => 'Block - Leaders',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/leaders/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['leaders'],
+        'keywords'        => array('leaders'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'title',
+        'title'           => 'Block - Title',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/title/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['title'],
+        'keywords'        => array('title', 'heading'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'quote',
+        'title'           => 'Block - Quote',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/quote/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['quote'],
+        'keywords'        => array('quote', 'blockquote'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'partners',
+        'title'           => 'Block - Partners',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/partners/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['partners'],
+        'keywords'        => array('partners', 'logos'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'news-about',
+        'title'           => 'Block - News About',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/news-about/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['news-about'],
+        'keywords'        => array('partners', 'logos'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'paragraph',
+        'title'           => 'Block - Paragraph',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/paragraph/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['paragraph'],
+        'keywords'        => array('paragraph', 'text'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'corporate-value',
+        'title'           => 'Block - Corporate Value',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/corporate-value/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['corporate-value'],
+        'keywords'        => array('corporate', 'value', 'values'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'hero',
+        'title'           => 'Block - Hero',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/hero/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['hero'],
+        'keywords'        => array('hero', 'banner', 'landing'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'video',
+        'title'           => 'Block - Video',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/video/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['video'],
+        'keywords'        => array('video', 'media'),
+    ));
 }
 
 // Register blocks when ACF is initialized

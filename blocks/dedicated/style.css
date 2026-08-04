@@ -33,7 +33,7 @@
     left: 0;
     width: 100%;
     height: calc(100% - 28rem);
-    background-color: #f4f5ff;
+    background-color: var(--about-bg, #f4f5ff);
     content: " "
 }
 

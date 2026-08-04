@@ -21,6 +21,66 @@
     background-color: #00020e !important
 }
 
+/* Gutenberg: quote/paragraph after hero — same top space as .banner--landing+.section on prod */
+.banner--landing + .article-container {
+    padding-top: 15rem
+}
+
+@media (max-width: 767px) {
+    .banner--landing + .article-container {
+        padding-top: 10rem
+    }
+}
+
+/* Innovation / about media: raised overlap like skyrora-theme */
+.section.about {
+    padding-top: 0
+}
+
+.about:after {
+    background-color: var(--about-bg, #f4f5ff)
+}
+
+.about__video.about--image picture,
+.about__video.about--image img {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    height: 100%;
+    object-fit: cover
+}
+
+.main > .section--nextIsVideo {
+    padding-bottom: 45rem
+}
+
+@media (max-width: 1219px) {
+    .main > .section--nextIsVideo {
+        padding-bottom: 40rem
+    }
+}
+
+@media (max-width: 1024px) {
+    .main > .section--nextIsVideo {
+        padding-bottom: 25rem
+    }
+
+    .about__video.about--image picture,
+    .about__video.about--image img {
+        right: 1rem;
+        left: 1rem;
+        width: calc(100% - 2rem)
+    }
+}
+
+@media (max-width: 479px) {
+    .main > .section--nextIsVideo {
+        padding-bottom: 20rem
+    }
+}
+
 .news p,
 .section__dark-template .media-menu__tags-btn .icon,
 .section__dark-template .media-menu__tags-btn span,

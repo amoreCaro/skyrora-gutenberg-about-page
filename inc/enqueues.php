@@ -38,7 +38,13 @@ function theme_gutenberg_scripts() {
 add_action ( 'enqueue_block_assets', 'theme_gutenberg_scripts' );
 
 function theme_admin_scripts() {
-    wp_enqueue_style( 'admin_helper', THEME . '/inc/admin/admin.css', array(), '1.0' );
+    wp_enqueue_style( 'admin_helper', THEME . '/inc/admin/admin.css', array(), '1.2' );
 }
 
 add_action('admin_enqueue_scripts', 'theme_admin_scripts');
+
+function theme_block_editor_assets() {
+    wp_enqueue_style( 'admin_helper', THEME . '/inc/admin/admin.css', array( 'wp-edit-blocks' ), '1.2' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'theme_block_editor_assets' );

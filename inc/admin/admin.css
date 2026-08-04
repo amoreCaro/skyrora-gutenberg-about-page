@@ -71,3 +71,17 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
 .wp-block-post-content {
     background: black;
 }
+
+/* Hide Patterns & Media tabs in the block inserter (WP 6.5+) */
+.block-editor-tabbed-sidebar__tab[id$="-patterns"],
+.block-editor-tabbed-sidebar__tab[id$="-media"],
+.block-editor-tabbed-sidebar__tabpanel[id$="-patterns-view"],
+.block-editor-tabbed-sidebar__tabpanel[id$="-media-view"] {
+    display: none !important;
+}
+
+/* Remove overflow fade mask left after hiding tabs */
+.block-editor-tabbed-sidebar__tablist {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+}
