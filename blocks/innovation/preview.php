@@ -6,10 +6,14 @@ if (!defined('ABSPATH')) {
 /**
  * Block Name: Innovation
  */
+
+$background_color = get_field('innovation_background_color');
+$section_style = $background_color
+    ? ' style="--about-bg: ' . esc_attr($background_color) . ';"'
+    : '';
 ?>
 
-<section class="section about js-viewport-checker"
-        style="background-color: <?php echo esc_attr( get_field('innovation_background_color') ); ?>;">
+<section class="section about js-viewport-checker"<?php echo $section_style; ?>>
     <div class="about__inner">
         
         <?php 
