@@ -25,6 +25,12 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
     font-size: 18px;
 }
 
+/* Core Heading block — editor canvas only */
+.editor-styles-wrapper .news .news__top h1 {
+    font-size: 40px !important;
+    line-height: 48px !important;
+}
+
 .wp-block-group,
 .wp-block-columns,
 .wp-block-column,
