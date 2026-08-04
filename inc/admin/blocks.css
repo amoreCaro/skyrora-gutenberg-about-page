@@ -502,7 +502,7 @@ hr {
 
 .acf-block-preview .h3,
 .acf-block-preview h3 {
-    font-size: 2.8rem
+    font-size: 28px;
 }
 
 .acf-block-preview .h4,
@@ -6702,7 +6702,7 @@ h3,
 h4,
 h6 {
     font-weight: 700 !important;
-    line-height: 1.2em !important;
+    line-height: 34px !important;
     text-transform: uppercase
 }
 
@@ -6747,7 +6747,7 @@ h2:not(:last-child) {
 .acf-block-preview h3:not(:last-child),
 .acf-block-preview h4:not(:last-child),
 .acf-block-preview p:not(:last-child) {
-    margin-bottom: 2rem
+    margin-bottom: 20px;
 }
 
 h6 {
@@ -6762,7 +6762,7 @@ h6:not(:last-child) {
     margin-top: 0;
     font-weight: 500;
     font-size: 18px;
-    line-height: 1.6em;
+    line-height: 29px;
 }
 
 .h-object-fit {
@@ -8027,12 +8027,7 @@ h6:not(:last-child) {
     align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-    max-width: 120rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    margin-right: auto;
-    margin-left: auto
+    justify-content: space-between
 }
 
 .constructor-title:not(:first-child) {
@@ -8091,7 +8086,8 @@ h6:not(:last-child) {
 
 .article-column,
 .landing-links .button {
-    max-width: 48rem
+    max-width: 480px;
+    width: 100%;
 }
 
 .content-media a {
@@ -10906,9 +10902,6 @@ textarea.form-control {
 }
 
 @media (max-width:1219px) {
-    .constructor-title {
-        max-width: 101.1rem
-    }
     .header__content-nav ul li {
         margin: 0 2rem
     }
@@ -14944,7 +14937,8 @@ textarea.form-control {
 .article-landing--long p,
 .article-landing--long ul,
 .person__content-main .characteristics-list {
-    max-width: 68rem
+    max-width: 680px; 
+    width: 100%;
 }
 
 .article-landing ul:not(:last-child),
@@ -15230,9 +15224,9 @@ textarea.form-control {
     display: block;
     content: counter(list, decimal-leading-zero) ".";
     font-weight: 500;
-    font-size: 1.8rem;
-    line-height: 1.6em;
-    margin-bottom: 1rem
+    font-size: 18px;
+    line-height: 29px;
+    margin-bottom: 10px;
 }
 
 .media-article {
