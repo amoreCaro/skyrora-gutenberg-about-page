@@ -21,7 +21,6 @@ if (!defined('ABSPATH')) {
                         <?php if ( $name ) : ?>
                             <h3><?php echo wp_kses( $name, [ 'br' => [] ] ); ?></h3>
                         <?php endif; ?>
-                        <br>
 
                         <?php if ( $content ) : ?>
                             <p>

@@ -120,12 +120,19 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
 }
 
 /* ------------------------------------------------------------------ */
-/* Article landing — editor-only spacing (inside ACF preview iframe)   */
-/* .acf-block-component/.acf-block-body live outside the canvas iframe */
-/* so they cannot target <article> — use .acf-block-preview instead    */
+/* Title block — editor spacing (match frontend constructor-title)     */
+/* :first-child/:last-child fail inside isolated .acf-block-preview    */
+/* 150px = 15rem, 40px = 4rem at frontend html font-size: 10px         */
 /* ------------------------------------------------------------------ */
-.acf-block-preview article.article-landing.article-landing--long {
-    padding-top: 150px;
+.acf-block-preview .constructor-title {
+    margin-top: 150px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+    .acf-block-preview .constructor-title {
+        margin-top: 100px; /* 10rem */
+    }
 }
 
 /* ------------------------------------------------------------------ */
