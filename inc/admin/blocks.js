@@ -54,9 +54,55 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    // Products: play/pause hover video in editor only (CSS cannot start playback)
+    function initProductHoverVideos(root) {
+        const scope = root && root.querySelectorAll ? root : document;
+        const products = [];
+
+        if (scope.nodeType === 1) {
+            if (scope.matches && scope.matches('.js-product') && scope.closest('.acf-block-preview .categories')) {
+                products.push(scope);
+            }
+            scope.querySelectorAll('.js-product').forEach((el) => {
+                if (el.closest('.acf-block-preview .categories')) {
+                    products.push(el);
+                }
+            });
+        } else {
+            document.querySelectorAll('.acf-block-preview .categories .js-product').forEach((el) => {
+                products.push(el);
+            });
+        }
+
+        products.forEach((product) => {
+            if (product.dataset.productHoverBound === '1') return;
+
+            const video = product.querySelector('.product__video');
+            if (!video) return;
+
+            product.dataset.productHoverBound = '1';
+            video.muted = true;
+            video.playsInline = true;
+            video.setAttribute('muted', '');
+            video.setAttribute('playsinline', '');
+
+            try {
+                video.pause();
+            } catch (e) {}
+
+            product.addEventListener('mouseenter', function () {
+                video.play().catch(function () {});
+            });
+            product.addEventListener('mouseleave', function () {
+                video.pause();
+            });
+        });
+    }
+
     function initBlockPreviewMedia() {
         initViewportObserver();
         playBlockVideos(document);
+        initProductHoverVideos(document);
     }
 
     if (document.readyState === 'loading') {
@@ -84,8 +130,9 @@ jQuery(document).ready(function ($) {
                 if (!mutation.addedNodes || !mutation.addedNodes.length) continue;
                 mutation.addedNodes.forEach((node) => {
                     if (node.nodeType !== 1) return;
-                    if (node.matches && (node.matches('video') || node.querySelector('video'))) {
+                    if (node.matches && (node.matches('video') || node.querySelector('video') || node.matches('.js-product') || node.querySelector('.js-product'))) {
                         playBlockVideos(node);
+                        initProductHoverVideos(node);
                     }
                 });
             }
