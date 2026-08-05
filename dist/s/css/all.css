@@ -8034,12 +8034,7 @@ p {
     align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-    max-width: 120rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    margin-right: auto;
-    margin-left: auto
+    justify-content: space-between
 }
 
 .constructor-title:not(:first-child) {
@@ -10913,9 +10908,6 @@ textarea.form-control {
 }
 
 @media (max-width:1219px) {
-    .constructor-title {
-        max-width: 101.1rem
-    }
     .header__content-nav ul li {
         margin: 0 2rem
     }
