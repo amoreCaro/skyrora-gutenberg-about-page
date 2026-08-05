@@ -42,29 +42,29 @@ if (!defined('ABSPATH')) {
                         }
                 ?>
 
-                    <a 
-                        href="<?php echo get_permalink($leader_id); ?>" 
-                        class="<?php echo esc_attr($col_class); ?>">
+                    <div class="<?php echo esc_attr($col_class); ?>">
+                        <a href="<?php echo esc_url(get_permalink($leader_id)); ?>">
 
-                        <div class="leader-item">
+                            <div class="leader-item">
 
-                            <div class="leader-item__img">
-                                <picture>
-                                    <source 
-                                        media="(min-width: 769px)"
-                                        srcset="<?php echo get_the_post_thumbnail_url($leader_id, [160, 35]); ?>" />
+                                <div class="leader-item__img">
+                                    <picture>
+                                        <source
+                                            media="(min-width: 769px)"
+                                            srcset="<?php echo get_the_post_thumbnail_url($leader_id, [160, 35]); ?>" />
 
-                                        <?php echo wp_get_attachment_image($leader_id, 'medium'); ?>
-                                </picture>
+                                            <?php echo wp_get_attachment_image($leader_id, 'medium'); ?>
+                                    </picture>
+                                </div>
+
+                                <?php if (get_the_title($leader_id)) : ?>
+                                    <p><?php echo esc_html(get_the_title($leader_id)); ?></p>
+                                <?php endif; ?>
+
                             </div>
 
-                            <?php if (get_the_title($leader_id)) : ?>
-                                <p><?php echo esc_html(get_the_title($leader_id)); ?></p>
-                            <?php endif; ?>
-
-                        </div>
-
-                    </a>
+                        </a>
+                    </div>
 
                 <?php
                     endforeach;

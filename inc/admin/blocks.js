@@ -93,12 +93,5 @@ jQuery(document).ready(function ($) {
         mo.observe(document.body, { childList: true, subtree: true });
     }
 
-    // Allow hover on news cards in preview without navigating away
-    document.addEventListener('click', function (e) {
-        const link = e.target.closest && e.target.closest('.acf-block-preview a.news-banner, .acf-block-preview a.news-item');
-        if (!link) return;
-        e.preventDefault();
-    }, true);
-
 })();
 });

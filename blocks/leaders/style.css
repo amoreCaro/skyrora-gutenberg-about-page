@@ -47,6 +47,32 @@
     margin-bottom: 2rem
 }
 
+.leaders [class*="col-"] > a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+}
+
+.leaders [class*="col-"] > a:hover,
+.leaders [class*="col-"] > a:focus,
+.leaders [class*="col-"] > a:focus-visible,
+.leaders [class*="col-"] > a:hover p,
+.leaders [class*="col-"] > a:focus p,
+.leaders [class*="col-"] > a:focus-visible p {
+    color: #2a5dea;
+    text-decoration: none;
+}
+
 .leader-item {
     border: 1px solid #474a54;
     padding: 3rem 4rem;
