@@ -7903,13 +7903,43 @@ h6:not(:last-child) {
     color: #fff
 }
 
-.acf-block-preview  .button--blue:after {
+.acf-block-preview .button--blue:after {
     background: #fff
 }
 
 .acf-block-preview .button--blue:hover .icon,
 .acf-block-preview .button--blue:hover span {
     color: #00020e
+}
+
+/* Dedicated block — hover overlay (scoped) */
+.acf-block-preview .about-dedicated__inner .button {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden;
+}
+
+.acf-block-preview .about-dedicated__inner .button:hover,
+.acf-block-preview .about-dedicated__inner .button:focus,
+.acf-block-preview .about-dedicated__inner .button:focus-visible,
+.acf-block-preview .about-dedicated__inner .button:active {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.acf-block-preview .about-dedicated__inner .button:hover:after {
+    width: 100%
+}
+
+.acf-block-preview .about-dedicated__inner .button--blue,
+.acf-block-preview .about-dedicated__inner .button--blue:hover,
+.acf-block-preview .about-dedicated__inner .button--blue:focus,
+.acf-block-preview .about-dedicated__inner .button--blue:focus-visible,
+.acf-block-preview .about-dedicated__inner .button--blue:active {
+    background: #164bdc;
+    background-color: #164bdc;
 }
 
 .acf-block-preview .button--bordered {
