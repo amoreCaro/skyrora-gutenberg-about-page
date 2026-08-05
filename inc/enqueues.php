@@ -25,7 +25,7 @@ function theme_gutenberg_scripts() {
     wp_enqueue_style( 'helper', THEME . '/dist/s/css/helper.css',  array( 'wp-editor' ) );
     // Editor/iframe only — quote padding overrides live in admin.css
     if ( is_admin() ) {
-        wp_enqueue_style( 'admin_helper', THEME . '/inc/admin/admin.css', array( 'blocks' ), '1.16' );
+        wp_enqueue_style( 'admin_helper', THEME . '/inc/admin/admin.css', array( 'blocks' ), '1.19' );
     }
     wp_enqueue_script('rellax', 'https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js', [], null, true);
     wp_enqueue_script('viewport-checker', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery-viewport-checker/1.8.8/jquery.viewportchecker.min.js', ['jquery'], '1.8.8', true);
@@ -42,13 +42,13 @@ function theme_gutenberg_scripts() {
 add_action ( 'enqueue_block_assets', 'theme_gutenberg_scripts' );
 
 function theme_admin_scripts() {
-    wp_enqueue_style( 'admin_helper', THEME . '/inc/admin/admin.css', array(), '1.16' );
+    wp_enqueue_style( 'admin_helper', THEME . '/inc/admin/admin.css', array(), '1.19' );
 }
 
 add_action('admin_enqueue_scripts', 'theme_admin_scripts');
 
 function theme_block_editor_assets() {
-    wp_enqueue_style( 'admin_helper', THEME . '/inc/admin/admin.css', array( 'wp-edit-blocks' ), '1.16' );
+    wp_enqueue_style( 'admin_helper', THEME . '/inc/admin/admin.css', array( 'wp-edit-blocks' ), '1.19' );
 }
 
 add_action( 'enqueue_block_editor_assets', 'theme_block_editor_assets' );
