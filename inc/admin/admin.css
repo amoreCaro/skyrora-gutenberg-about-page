@@ -26,7 +26,7 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
 }
 
 /* Core Heading block — editor canvas only */
-.editor-styles-wrapper .news .news__top h1 {
+.editor-styles-wrapper .acf-block-preview .news .news__top h1 {
     font-size: 40px !important;
     line-height: 48px !important;
 }

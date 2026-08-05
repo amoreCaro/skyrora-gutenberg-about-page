@@ -8,7 +8,8 @@ if (!defined('ABSPATH')) {
  */
 ?>
 
-<section id="section-<?php echo esc_attr( skyrora_section_index() ); ?>" class="section news js-viewport-checker invisible">
+<section id="section-<?php echo esc_attr( skyrora_section_index() ); ?>" class="section news js-viewport-checker invisible"
+        style="background-color: <?php echo esc_attr( get_field('about_news_bg') ); ?>;">
     <div class="container">
         <div class="news__top">
             <?php if (get_field('about_news_title')): ?>
