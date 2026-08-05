@@ -197,36 +197,64 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
 }
 
 /* ------------------------------------------------------------------ */
-/* News cards — frontend hover (scoped; links are pointer-events:none) */
+/* Leaders / News — hover via parents; <a> stays pointer-events:none   */
+/* Leaders: bg/border #0c0e14 + text #2a5dea (match frontend a:hover)  */
 /* ------------------------------------------------------------------ */
-.acf-block-preview a.news-banner,
-.acf-block-preview a.news-item {
-    pointer-events: auto;
+.acf-block-preview .leaders [class*="col-"] > a,
+.acf-block-preview .leaders [class*="col-"] > a:focus,
+.acf-block-preview .leaders [class*="col-"] > a:focus-visible,
+.acf-block-preview .leaders [class*="col-"] .leader-item,
+.acf-block-preview .leaders [class*="col-"] .leader-item p {
+    color: #fff;
+    text-decoration: none;
+}
+
+.acf-block-preview .leaders [class*="col-"] > a {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.acf-block-preview .leaders [class*="col-"]:hover .leader-item {
+    background-color: #0c0e14;
+    border-color: #0c0e14;
+}
+
+.acf-block-preview .leaders [class*="col-"]:hover > a,
+.acf-block-preview .leaders [class*="col-"]:hover .leader-item,
+.acf-block-preview .leaders [class*="col-"]:hover .leader-item p {
+    color: #2a5dea;
+    text-decoration: none;
 }
 
 @media (min-width: 769px) {
-    .acf-block-preview .news-banner:hover .h-object-fit,
-    .acf-block-preview .news-item:hover .h-object-fit {
+    .acf-block-preview .news [class*="col-"]:hover .news-banner .h-object-fit,
+    .acf-block-preview .news [class*="col-"]:hover .news-item .h-object-fit {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
     }
 
-    .acf-block-preview .news-banner:hover img,
-    .acf-block-preview .news-banner:hover picture {
+    .acf-block-preview .news [class*="col-"]:hover .news-banner img,
+    .acf-block-preview .news [class*="col-"]:hover .news-banner picture {
         -webkit-transform: scale(1.05);
         transform: scale(1.05);
     }
 
-    .acf-block-preview .news-banner:hover:after {
+    .acf-block-preview .news [class*="col-"]:hover .news-banner:after {
         opacity: 0.8;
     }
 
-    .acf-block-preview .news-item:hover h4 {
+    .acf-block-preview .news [class*="col-"]:hover .news-banner h4 {
+        color: #fff;
+    }
+
+    .acf-block-preview .news [class*="col-"]:hover .news-item h4 {
         color: #2a5dea;
     }
 
-    .acf-block-preview .news-item:hover img,
-    .acf-block-preview .news-item:hover picture {
+    .acf-block-preview .news [class*="col-"]:hover .news-item img,
+    .acf-block-preview .news [class*="col-"]:hover .news-item picture {
         -webkit-transform: scale(1.05);
         transform: scale(1.05) translateZ(0);
     }
