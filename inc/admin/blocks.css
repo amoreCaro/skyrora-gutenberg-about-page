@@ -7942,6 +7942,40 @@ h6:not(:last-child) {
     background-color: #164bdc;
 }
 
+/* News block — bordered button hover (scoped) */
+.acf-block-preview .news .button {
+    outline: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.acf-block-preview .news .button:hover,
+.acf-block-preview .news .button:focus,
+.acf-block-preview .news .button:focus-visible,
+.acf-block-preview .news .button:active {
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent;
+}
+
+.acf-block-preview .news .button:after {
+    -webkit-transition: width .5s;
+    transition: width .5s;
+}
+
+.acf-block-preview .news .button:hover:after,
+.acf-block-preview .news .button:focus:after,
+.acf-block-preview .news .button:focus-visible:after,
+.acf-block-preview .news .button:active:after {
+    width: 100%;
+}
+
+.acf-block-preview .news .button--bordered:hover .icon,
+.acf-block-preview .news .button--bordered:hover span {
+    color: #fff;
+}
+
 .acf-block-preview .button--bordered {
     background: 0 0;
     border: 1px solid #2a5dea
@@ -13956,12 +13990,6 @@ textarea.form-control {
 .about-block,
 .pagination a.active {
     pointer-events: none
-}
-
-.acf-block-preview .button--bordered:hover {
-    background: #2a5dea;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
 }
 
 .about__video {
