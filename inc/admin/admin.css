@@ -136,6 +136,16 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
 }
 
 /* ------------------------------------------------------------------ */
+/* Article landing — editor-only spacing (inside ACF preview iframe)   */
+/* Restored from fix/quote-block; keep alongside title block margins.  */
+/* .acf-block-component/.acf-block-body live outside the canvas iframe */
+/* so they cannot target <article> — use .acf-block-preview instead    */
+/* ------------------------------------------------------------------ */
+.acf-block-preview article.article-landing.article-landing--long {
+    padding-top: 150px;
+}
+
+/* ------------------------------------------------------------------ */
 /* Quote block — isolated to ACF preview, match frontend (all.css)     */
 /* px values = frontend rem at html font-size: 10px                    */
 /* padding-left: 5rem → 50px (desktop); keep 50px in editor preview    */
