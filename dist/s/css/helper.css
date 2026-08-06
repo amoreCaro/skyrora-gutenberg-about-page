@@ -5,6 +5,9 @@
 .icon-tw {
     font-size: 3rem !important;
 }
+.logged-in header {
+    top: 30px;
+}
 
 .share__list{
     display: flex;
