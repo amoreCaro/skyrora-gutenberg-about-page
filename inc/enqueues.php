@@ -21,7 +21,7 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts_front', 100 );
 
 function theme_gutenberg_scripts() {
     
-    wp_enqueue_style( 'blocks', THEME . '/inc/admin/blocks.css', array( 'wp-editor' ) );
+    wp_enqueue_style( 'blocks', THEME . '/inc/admin/blocks.css', array( 'wp-editor' ), '1.1' );
     wp_enqueue_style( 'helper', THEME . '/dist/s/css/helper.css',  array( 'wp-editor' ) );
     // Editor/iframe only — quote padding overrides live in admin.css
     if ( is_admin() ) {
