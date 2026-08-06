@@ -140,6 +140,11 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
     -webkit-mask-image: none !important;
 }
 
+/* Skyrora block inserter icons — WP forces fill:currentColor on all SVG shapes */
+svg.skyrora-block-icon [fill="none"] {
+    fill: none !important;
+}
+
 /* ------------------------------------------------------------------ */
 /* Title block — editor spacing (match frontend constructor-title)     */
 /* :first-child/:last-child fail inside isolated .acf-block-preview    */
