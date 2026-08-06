@@ -1784,6 +1784,11 @@ textarea.form-control {
     font-size: 40px !important;
     line-height: 48px !important;
 }
+.acf-block-preview .about-dedicated__inner h2 {
+    font-size: 40px !important;
+    line-height: 48px !important;
+}
+
 
 
 .valid-tooltip {
