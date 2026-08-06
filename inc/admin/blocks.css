@@ -6696,11 +6696,11 @@ h1 {
     text-transform: uppercase
 }
 
-.main-error__bottom ul a,
-h2,
-h3,
-h4,
-h6 {
+.acf-block-preview .main-error__bottom ul a,
+.acf-block-preview h2,
+.acf-block-preview h3,
+.acf-block-preview h4,
+.acf-block-preview h6 {
     font-weight: 700 !important;
     line-height: 34px !important;
     text-transform: uppercase
@@ -15194,7 +15194,7 @@ textarea.form-control {
     font-family: "Bai Jamjuree";
     font-weight: 700;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 12px;
     text-transform: uppercase;
     color: #2a5dea
 }

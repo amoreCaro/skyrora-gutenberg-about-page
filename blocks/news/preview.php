@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 ?>
 
 <section class="section news js-viewport-checker invisible"
-        style="background-color: <?php echo esc_attr( get_field('news_background_color') ); ?>;">>
+style="background-color: <?php echo esc_attr( get_field('news_background_color') ); ?>;">
     <div class="container">
         <div class="news__top">
             <?php if( get_field('news_title') ){ ?>
