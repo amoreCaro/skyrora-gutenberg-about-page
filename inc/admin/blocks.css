@@ -471,7 +471,7 @@ template {
 .acf-block-preview h4,
 .acf-block-preview h5,
 .acf-block-preview h6 {
-    margin-bottom: .5rem;
+    margin-bottom: 5px;
     font-family: "Bai Jamjuree";
     font-weight: 500;
     line-height: 1.2
@@ -5120,7 +5120,7 @@ button.bg-dark:hover {
 }
 
 .about__content-tech,
-.banner__contacts-list,
+.acf-block-preview .banner__contacts-list,
 .checkItemSpecial,
 .l-wrapper,
 .landing-links,
@@ -6696,11 +6696,11 @@ h1 {
     text-transform: uppercase
 }
 
-.main-error__bottom ul a,
-h2,
-h3,
-h4,
-h6 {
+.acf-block-preview .main-error__bottom ul a,
+.acf-block-preview h2,
+.acf-block-preview h3,
+.acf-block-preview h4,
+.acf-block-preview h6 {
     font-weight: 700 !important;
     line-height: 34px !important;
     text-transform: uppercase
@@ -6870,7 +6870,7 @@ h6:not(:last-child) {
     .main>.section--nextIsVideo {
         padding-bottom: 250px
     }
-    .banner__content-logo__item img {
+    .acf-block-preview .banner__content-logo__item img {
         height: 50px !important;
         width: auto;
     }
@@ -7044,7 +7044,7 @@ h6:not(:last-child) {
     padding-top: 7.5rem;
     padding-bottom: 7.5rem
 }
-.banner--landing+.section {
+.acf-block-preview .banner--landing+.section {
     padding-top: 150px;
 }
 
@@ -7100,8 +7100,8 @@ h6:not(:last-child) {
     margin-bottom: 1rem
 }
 
-.banner--landing+.section,
-.banner--landing+.article-container {
+.acf-block-preview .banner--landing+.section,
+.acf-block-preview .banner--landing+.article-container {
     padding-top: 15rem
 }
 
@@ -7220,8 +7220,8 @@ h6:not(:last-child) {
     .section-top__txt p br {
         display: none
     }
-    .banner--landing+.section,
-    .banner--landing+.article-container {
+    .acf-block-preview .banner--landing+.section,
+    .acf-block-preview .banner--landing+.article-container {
         padding-top: 100px
     }
     .acf-block-preview .leaders h2 {
@@ -8063,11 +8063,11 @@ h6:not(:last-child) {
     display: block
 }
 
-.footer__content-main .js-collapse:not(:last-child),
-.footer__content-main li:first-child,
-.landing-links .button:not(:last-child),
-.title-sub:not(:last-child) {
-    margin-bottom: 2rem
+.acf-block-preview .footer__content-main .js-collapse:not(:last-child),
+.acf-block-preview .footer__content-main li:first-child,
+.acf-block-preview .landing-links .button:not(:last-child),
+.acf-block-preview .title-sub:not(:last-child) {
+    margin-bottom: 20px;
 }
 
 .decor--ml-auto {
@@ -8144,7 +8144,7 @@ h6:not(:last-child) {
 }
 
 .about__content-tech,
-.banner__contacts-list,
+.acf-block-preview .banner__contacts-list,
 .landing-links {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -9343,7 +9343,7 @@ button {
 }
 
 .article-row,
-.banner--landing,
+.acf-block-preview .banner--landing,
 .breadcrumbs__mobile-link,
 .form-fromTo,
 .form-group--leftIcon .input-wrap,
@@ -9943,7 +9943,7 @@ textarea.form-control {
 .article-media,
 .breadcrumbs__mobile-arrow,
 .combo--six,
-.news__link,
+.acf-block-preview .news__link,
 .popup-form__submit,
 .popup-wrap {
     display: -webkit-box;
@@ -10692,7 +10692,7 @@ textarea.form-control {
     }
 }
 
-.banner__contacts-list p,
+.acf-block-preview .banner__contacts-list p,
 .header__media-submenu .media-menu__categories-content ul li {
     margin-bottom: 0
 }
@@ -10952,7 +10952,7 @@ textarea.form-control {
     }
 }
 
-.banner__content,
+.acf-block-preview .banner__content,
 .header__content-nav ul,
 .header__content-nav ul a {
     display: -webkit-box;
@@ -11058,9 +11058,10 @@ textarea.form-control {
     margin-top: 4px
 }
 
-.banner {
+.acf-block-preview .banner {
     position: relative;
-    height: 585px;
+    /* 670px = frontend min-height 67rem (html font-size: 10px) */
+    height: 670px;
     padding-top: 0;
     padding-bottom: 0
 }
@@ -11997,34 +11998,36 @@ textarea.form-control {
     .footer__content-collapseMobileBtn {
         display: none
     }
-    .banner,
-    .banner__video {
+    .acf-block-preview .banner,
+    .acf-block-preview .banner__video {
+        height: 670px;
         min-height: 670px
     }
 }
 
-.banner__video {
+.acf-block-preview .banner__video {
     position: absolute;
     right: 0;
     top: 0;
-    height: 85vh;
+    height: 670px;
     width: 100%;
     overflow: hidden;
+    opacity: .5;
 }
 
-.banner__video .bv-video-wrap {
+.acf-block-preview .banner__video .bv-video-wrap {
     width: 100%;
     height: 100%
 }
 
-.banner__video video {
+.acf-block-preview .banner__video video {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover
 }
 
-.banner__video [data-prevent-transform=true] {
+.acf-block-preview .banner__video [data-prevent-transform=true] {
     opacity: 1;
 }
 .acf-block-preview .banner h1 {
@@ -12032,7 +12035,7 @@ textarea.form-control {
     line-height: 70px;
 }
 
-.banner__content {
+.acf-block-preview .banner__content {
     position: relative;
     z-index: 3;
     display: flex;
@@ -12042,13 +12045,14 @@ textarea.form-control {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    padding: 20rem 0;
-    height: 85vh
+    /* 200px = 20rem at frontend html font-size: 10px */
+    padding: 200px 0;
+    height: 670px
 }
 
 @media (min-width:768px) {
-    .banner__content {
-        min-height: 67rem
+    .acf-block-preview .banner__content {
+        min-height: 670px
     }
     .breadcrumbs__mobile-arrow {
         display: none
@@ -12988,22 +12992,25 @@ textarea.form-control {
     .text-xl-center {
         text-align: center !important
     }
-    .banner,
-    .banner__content,
-    .banner__video {
+    .acf-block-preview .banner,
+    .acf-block-preview .banner__content,
+    .acf-block-preview .banner__video {
+        height: 740px;
         min-height: 740px
     }
 }
 
-.banner__content-txt {
+.acf-block-preview .banner__content-txt {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
     max-width: 680px;
     width: 100%;
+    /* 120px = 12rem at frontend html font-size: 10px */
+    margin-right: 120px;
 }
 
-.banner__content-txt p {
+.acf-block-preview .banner__content-txt p {
     font-weight: 400;
     font-size: 18px;
     line-height: 29px;
@@ -13053,12 +13060,14 @@ textarea.form-control {
     .footer__content-main .js-collapse li {
         padding-left: 2rem
     }
-    .banner,
-    .banner__video {
+    .acf-block-preview .banner,
+    .acf-block-preview .banner__video {
+        height: 520px;
         min-height: 520px
     }
     .acf-block-preview .banner__content {
         padding: 130px 0 80px;
+        height: 520px;
         min-height: 520px
     }
     .acf-block-preview  .banner__content-txt p {
@@ -13073,21 +13082,21 @@ textarea.form-control {
     }
 }
 
-.banner__content-list {
+.acf-block-preview  .banner__content-list {
     -ms-flex-negative: 0;
     flex-shrink: 0
 }
 
-.banner__content-list ul li:not(:last-child) {
-    margin-bottom: 1.2rem
+.acf-block-preview .banner__content-list ul li:not(:last-child) {
+    margin-bottom: 12px;
 }
 
-.banner__content-list ul a {
+.acf-block-preview .banner__content-list ul a {
     display: inline-block;
     font-family: "Bai Jamjuree";
     font-weight: 700;
-    font-size: 1.3rem;
-    line-height: 1.2em;
+    font-size: 13px;
+    line-height: 16px;
     color: #fff;
     border-bottom: 1px solid #fff;
     padding: 8px 0;
@@ -13097,8 +13106,8 @@ textarea.form-control {
     position: relative
 }
 
-.banner__content-list ul a:after,
-.banner__content-list ul a:before {
+.acf-block-preview .banner__content-list ul a:after,
+.acf-block-preview .banner__content-list ul a:before {
     display: block;
     position: absolute;
     bottom: -1px;
@@ -13111,29 +13120,30 @@ textarea.form-control {
     opacity: 0
 }
 
-.banner__content-list ul a:before {
+.acf-block-preview .banner__content-list ul a:before {
     right: 50%;
     transition: width .5s, opacity .5s;
     -webkit-transition-property: width, opacity
 }
 
-.banner__content-list ul a:after {
+.acf-block-preview .banner__content-list ul a:after {
     left: 50%;
     transition: width .5s, opacity .5s;
     -webkit-transition-property: width, opacity
 }
 
-.banner__content-list ul a:hover {
+/* Hover via parent li — links keep pointer-events:none in editor */
+.acf-block-preview .banner__content-list ul li:hover a {
     border-bottom: 1px solid rgba(255, 255, 255, 0)
 }
 
-.banner__content-list ul a:hover:after,
-.banner__content-list ul a:hover:before {
+.acf-block-preview .banner__content-list ul li:hover a:after,
+.acf-block-preview .banner__content-list ul li:hover a:before {
     width: 50%;
     opacity: 1
 }
 
-.banner__content-scrollDown {
+.acf-block-preview .banner__content-scrollDown {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -13145,7 +13155,7 @@ textarea.form-control {
     justify-content: flex-end
 }
 
-.banner__content-scrollDown a {
+.acf-block-preview .banner__content-scrollDown a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -13157,33 +13167,33 @@ textarea.form-control {
     transition: .5s
 }
 
-.banner__content-scrollDown a .icon,
-.banner__content-scrollDown a span {
+.acf-block-preview .banner__content-scrollDown a .icon,
+.acf-block-preview .banner__content-scrollDown a span {
     -webkit-transition: .5s;
     transition: .5s
 }
 
-.banner__content-scrollDown a:hover .icon,
-.banner__content-scrollDown a:hover span {
+.acf-block-preview .banner__content-scrollDown a:hover .icon,
+.acf-block-preview .banner__content-scrollDown a:hover span {
     color: #2a5dea
 }
 
-.banner__content-contacts {
+.acf-block-preview .banner__content-contacts {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    padding: 20rem 0 15rem
+    padding: 200px 0 150px
 }
 
-.banner__contacts-list ul:not(:last-child) {
+.acf-block-preview .banner__contacts-list ul:not(:last-child) {
     margin-bottom: 5rem
 }
 
-.banner__contacts-list p:not(:last-child) {
+.acf-block-preview .banner__contacts-list p:not(:last-child) {
     margin-bottom: 6px
 }
 
-.banner__contacts-list li:not(:last-child) {
+.acf-block-preview .banner__contacts-list li:not(:last-child) {
     margin-bottom: 4.2rem
 }
 
@@ -13247,7 +13257,7 @@ textarea.form-control {
     .header__media-submenu .media-menu__tags-content ul {
         padding-top: 1rem
     }
-    .banner__content {
+    .acf-block-preview .banner__content {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -13259,46 +13269,46 @@ textarea.form-control {
         -ms-flex-pack: end;
         justify-content: flex-end
     }
-    .banner__content-txt {
+    .acf-block-preview .banner__content-txt {
         margin-right: 0;
         -webkit-box-flex: 0;
         -ms-flex-positive: 0;
         flex-grow: 0
     }
-    .banner__content-list ul {
+    .acf-block-preview .banner__content-list ul {
         display: none
     }
-    .banner__content-scrollDown {
+    .acf-block-preview .banner__content-scrollDown {
         padding-top: 7.5rem
     }
-    .banner__content-contacts {
+    .acf-block-preview .banner__content-contacts {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        padding: 13rem 0 8rem
+        padding: 130px 0 80px
     }
-    .banner__content-contacts h1 {
-        font-size: 2.8rem
+    .acf-block-preview .banner__content-contacts h1 {
+        font-size: 28px
     }
-    .banner__content-contacts .banner__content-txt {
+    .acf-block-preview .banner__content-contacts .banner__content-txt {
         margin-bottom: 5rem
     }
-    .banner__contacts-list li:not(:last-child) {
+    .acf-block-preview .banner__contacts-list li:not(:last-child) {
         margin-bottom: 3rem
     }
-    .banner--contacts,
-    .banner--contacts .banner__video {
-        min-height: 76rem
+    .acf-block-preview .banner--contacts,
+    .acf-block-preview .banner--contacts .banner__video {
+        min-height: 760px
     }
-    .banner--contacts .banner__content {
-        min-height: 76rem;
+    .acf-block-preview .banner--contacts .banner__content {
+        min-height: 760px;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center
     }
 }
 
-.banner--landing .banner__content {
+.acf-block-preview .banner--landing .banner__content {
     height: auto
 }
 
@@ -13633,7 +13643,7 @@ textarea.form-control {
     }
 }
 
-.banner--landing+.section {
+.acf-block-preview .banner--landing+.section {
     padding-top: 150px;
 }
 
@@ -13842,7 +13852,7 @@ textarea.form-control {
 
 .info-item__info-content-bottom>span:not(:last-child),
 .info-item__info-content-top>span:not(:last-child),
-.news .col-24 {
+.acf-block-preview .news .col-24 {
     margin-bottom: 2rem
 }
 
@@ -14044,11 +14054,11 @@ textarea.form-control {
     }
 }
 
-.about__video:not(:last-child) {
-    margin-bottom: 10rem
+.acf-block-preview .about__video:not(:last-child) {
+    margin-bottom: 100px;
 }
 
-.about__video:after {
+.acf-block-preview .about__video:after {
     content: " ";
     visibility: hidden;
     display: block;
@@ -14058,7 +14068,7 @@ textarea.form-control {
     margin: 0 auto
 }
 
-.about__video video {
+.acf-block-preview .about__video video {
     position: absolute;
     top: 0;
     right: 2rem;
@@ -14071,15 +14081,15 @@ textarea.form-control {
     transition: .5s
 }
 
-.about__content-tech h2 {
+.acf-block-preview .about__content-tech h2 {
     max-width: 76rem
 }
 
-.about__content-tech .button {
+.acf-block-preview .about__content-tech .button {
     width: auto
 }
 
-.about__content-tech-line {
+.acf-block-preview .about__content-tech-line {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -14092,27 +14102,27 @@ textarea.form-control {
     width: 100%
 }
 
-.about__content article,
-.about__content ul li,
-.about__content--dedicated-mod,
-.about__content-tech-col {
+.acf-block-preview .about__content article,
+.acf-block-preview .about__content ul li,
+.acf-block-preview .about__content--dedicated-mod,
+.acf-block-preview .about__content-tech-col {
     display: -webkit-box;
     display: -ms-flexbox
 }
 
-.about__content-tech-line:not(:last-child) {
-    margin-bottom: 10rem
+.acf-block-preview .about__content-tech-line:not(:last-child) {
+    margin-bottom: 100px;
 }
 
-.about__content-tech-line>.icon {
-    font-size: 6rem;
+.acf-block-preview .about__content-tech-line>.icon {
+    font-size: 60px;
     margin: 1rem 1.5rem 0;
     color: #2a5dea;
     -ms-flex-item-align: start;
     align-self: flex-start
 }
 
-.about__content-tech-col {
+.acf-block-preview .about__content-tech-col {
     display: flex;
     flex-direction: column;
     -webkit-box-align: start;
@@ -14216,15 +14226,10 @@ textarea.form-control {
     color: #fff
 }
 
-
-
-
 .about__content ul {
     max-width: 380px;
     width: 100%;
 }
-
-
 
 @media (max-width: 1024px) {
     .acf-block-preview h2 {
@@ -14393,7 +14398,7 @@ textarea.form-control {
 
 
 .about__content--dedicated-mod ul:not(:first-child),
-.news__mobile-line {
+.acf-block-preview .news__mobile-line {
     margin-top: 10px
 }
 
@@ -14441,8 +14446,6 @@ textarea.form-control {
     margin-right: 24px;
 }
 
-
-
 .about__content--dedicated-mod ul li .icon-wrap img {
     display: block;
     position: absolute;
@@ -14455,6 +14458,7 @@ textarea.form-control {
     width: auto;
     height: auto
 }
+
 .about__content--dedicated-mod span {
     max-width: 348px;
 }
@@ -14464,7 +14468,6 @@ textarea.form-control {
     font-weight: 600;
     font-size: 17px;
     line-height: 26px
-
 }
 
 .about__content--dedicated-mod button {
@@ -14472,11 +14475,11 @@ textarea.form-control {
 }
 
 .about__article-link-mobile {
-    margin-top: 6rem
+    margin-top: 60px;
 }
 
 .about-block {
-    padding-top: 45rem
+    padding-top: 45rem;
 }
 
 @media (max-width:1024px) {
@@ -14624,7 +14627,7 @@ textarea.form-control {
 }
 
 @media (min-width:1025px) {
-    .banner--description .banner__content {
+    .acf-block-preview .banner--description .banner__content {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center
@@ -14711,12 +14714,12 @@ textarea.form-control {
     padding-bottom: 15rem
 }
 
-.news h2,
-.news p,
-.news__mobile-line a .icon,
-.news__mobile-line a span,
-.news__top a .icon,
-.news__top a span {
+.acf-block-preview .news h2,
+.acf-block-preview .news p,
+.acf-block-preview .news__mobile-line a .icon,
+.acf-block-preview .news__mobile-line a span,
+.acf-block-preview .news__top a .icon,
+.acf-block-preview .news__top a span {
     color: #242833
 }
 
@@ -14747,8 +14750,8 @@ textarea.form-control {
 .launch-block [class^=" col-"],
 .launch-block [class^=col-],
 .leaders .col-24,
-.news__collage .col-24,
-.news__row .col-24 {
+.acf-block-preview .news__collage .col-24,
+.acf-block-preview .news__row .col-24 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -14866,7 +14869,7 @@ textarea.form-control {
     margin: auto
 }
 
-.news__collage:not(:last-child),
+.acf-block-preview .news__collage:not(:last-child),
 .partners:not(:last-child) {
     margin-bottom: 3rem
 }
@@ -14882,19 +14885,18 @@ textarea.form-control {
     margin-right: -1rem
 }
 
-.news-banner,
-.news__top {
+.acf-block-preview .news-banner,
+.acf-block-preview .news__top {
     display: -webkit-box;
     display: -ms-flexbox
 }
 
-.news {
-    background-color: #f3f3f5;
-    padding-top: 15rem;
-    padding-bottom: 10rem
+.acf-block-preview .news {
+    padding-top: 150px;
+    padding-bottom: 100px;
 }
 
-.news__top {
+.acf-block-preview .news__top {
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -14911,16 +14913,16 @@ textarea.form-control {
         line-height: 28px !important;
     }
 }
-.news__top h2,
+.acf-block-preview .news__top h2,
 .popup-form__inner>.form-group:last-child {
     margin-bottom: 0
 }
 
-.news__link .button {
+.acf-block-preview .news__link .button {
     width: auto
 }
 
-.news__collage .news-banner {
+.acf-block-preview .news__collage .news-banner {
     min-height: 440px;
     width: 100%;
     -webkit-box-flex: 1;
@@ -14928,8 +14930,8 @@ textarea.form-control {
     flex-grow: 1
 }
 
-.news__collage .news-item,
-.news__row .news-item {
+.acf-block-preview .news__collage .news-item,
+.acf-block-preview .news__row .news-item {
     width: 100%;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -14939,12 +14941,12 @@ textarea.form-control {
 
 @media (min-width:768px) {
     .about__article-link-mobile,
-    .news__mobile-line {
+    .acf-block-preview .news__mobile-line {
         display: none
     }
 }
 
-.news-banner {
+.acf-block-preview .news-banner {
     display: flex;
     position: relative;
     opacity: 1;
@@ -14954,8 +14956,8 @@ textarea.form-control {
     transition: 1.5s
 }
 
-.news-banner__info,
-.news-banner__info-main {
+.acf-block-preview .news-banner__info,
+.acf-block-preview .news-banner__info-main {
     display: -webkit-box;
     display: -ms-flexbox;
     -webkit-box-orient: vertical;
@@ -14965,24 +14967,24 @@ textarea.form-control {
 
 .landing-video .h-object-fit,
 .landing-video video,
-.news-banner:after,
-.news-banner__picture,
-.news-banner__picture .h-object-fit,
-.news-item__picture .h-object-fit {
+.acf-block-preview .news-banner:after,
+.acf-block-preview .news-banner__picture,
+.acf-block-preview .news-banner__picture .h-object-fit,
+.acf-block-preview .news-item__picture .h-object-fit {
     position: absolute;
     left: 0;
     height: 100%;
     top: 0
 }
 
-.invisible .news-banner,
-.invisible .news-item {
+.acf-block-preview .invisible .news-banner,
+.acf-block-preview .invisible .news-item {
     opacity: 0;
     -webkit-transform: translateY(4rem);
     transform: translateY(4rem)
 }
 
-.news-banner:after {
+.acf-block-preview .news-banner:after {
     width: 100%;
     z-index: 2;
     content: " ";
@@ -14992,11 +14994,11 @@ textarea.form-control {
     transition: opacity .5s
 }
 
-.news-banner__picture {
+.acf-block-preview .news-banner__picture {
     width: 100%
 }
 
-.news-banner__picture .h-object-fit {
+.acf-block-preview .news-banner__picture .h-object-fit {
     bottom: 0;
     right: 0;
     width: 100%;
@@ -15004,13 +15006,13 @@ textarea.form-control {
     transform: translateZ(0)
 }
 
-.news-banner__picture img,
-.news-banner__picture picture {
+.acf-block-preview .news-banner__picture img,
+.acf-block-preview .news-banner__picture picture {
     -webkit-transition: .5s;
     transition: .5s
 }
 
-.news-banner__info {
+.acf-block-preview .news-banner__info {
     display: flex;
     flex-direction: column;
     -webkit-box-align: start;
@@ -15038,17 +15040,17 @@ textarea.form-control {
 .media-article article h4:not(:last-child),
 .media-article article img:not(:last-child),
 .media-article article picture:not(:last-child),
-.news-banner__info-top:not(:last-child) {
+.acf-block-preview .news-banner__info-top:not(:last-child) {
     margin-bottom: 2rem
 }
 
 .article-landing ul li:not(:last-child),
-.news-banner__info-main h4:not(:last-child),
-.news-item__info-top:not(:last-child) {
+.acf-block-preview .news-banner__info-main h4:not(:last-child),
+.acf-block-preview .news-item__info-top:not(:last-child) {
     margin-bottom: 10px
 }
 
-.news-banner:hover {
+.acf-block-preview .news-banner:hover {
     display: flex;
     position: relative;
     opacity: 1;
@@ -15057,7 +15059,7 @@ textarea.form-control {
     -webkit-transition: 1.5s;
     transition: 1.5s;
 }
-.news-banner__info-top span {
+.acf-block-preview .news-banner__info-top span {
     font-weight: 700;
     font-size: 12px;
     line-height: 12px;
@@ -15065,7 +15067,7 @@ textarea.form-control {
     color: #fff
 }
 
-.news-banner__info-main {
+.acf-block-preview .news-banner__info-main {
     display: flex;
     flex-direction: column;
     -webkit-box-align: start;
@@ -15073,8 +15075,8 @@ textarea.form-control {
     align-items: flex-start
 }
 
-.news-item,
-.news-item__info {
+.acf-block-preview .news-item,
+.acf-block-preview .news-item__info {
     display: -webkit-box;
     display: -ms-flexbox;
     -ms-flex-direction: column;
@@ -15083,7 +15085,7 @@ textarea.form-control {
     -webkit-box-direction: normal
 }
 
-.news-banner__info-main h4 {
+.acf-block-preview .news-banner__info-main h4 {
     font-weight: 700 !important;
     font-size: 20px;
     line-height: 24px !important;
@@ -15091,7 +15093,7 @@ textarea.form-control {
     text-transform: capitalize
 }
 
-.news-banner__info-main time {
+.acf-block-preview .news-banner__info-main time {
     font-weight: 700;
     font-size: 13px;
     line-height: 16px;
@@ -15099,7 +15101,7 @@ textarea.form-control {
     color: #b8bdcc
 }
 
-.news-item {
+.acf-block-preview .news-item {
     display: flex;
     flex-direction: column;
     -webkit-box-align: start;
@@ -15112,45 +15114,49 @@ textarea.form-control {
     transition: 1.5s
 }
 
+/* Hover via parent col — links keep pointer-events:none so editor doesn't navigate */
 @media (min-width:769px) {
-    .news-banner:hover .h-object-fit,
-    .news-item:hover .h-object-fit {
+    .acf-block-preview .news [class*="col-"]:hover .news-banner .h-object-fit,
+    .acf-block-preview .news [class*="col-"]:hover .news-item .h-object-fit {
         -webkit-transform: translateZ(0);
         transform: translateZ(0)
     }
-    .news-banner:hover img,
-    .news-banner:hover picture {
+    .acf-block-preview .news [class*="col-"]:hover .news-banner img,
+    .acf-block-preview .news [class*="col-"]:hover .news-banner picture {
         -webkit-transform: scale(1.05);
         transform: scale(1.05)
     }
-    .news-banner:hover:after {
+    .acf-block-preview .news [class*="col-"]:hover .news-banner:after {
         opacity: .8
     }
-    .news-item:hover h4 {
+    .acf-block-preview .news [class*="col-"]:hover .news-banner h4 {
+        color: #fff
+    }
+    .acf-block-preview .news [class*="col-"]:hover .news-item h4 {
         color: #2a5dea
     }
-    .news-item:hover img,
-    .news-item:hover picture {
+    .acf-block-preview .news [class*="col-"]:hover .news-item img,
+    .acf-block-preview .news [class*="col-"]:hover .news-item picture {
         -webkit-transform: scale(1.05);
         transform: scale(1.05) translateZ(0)
     }
 }
 
-.news-item__picture {
+.acf-block-preview .news-item__picture {
     position: relative;
     width: 100%;
     -webkit-transform: translateZ(0);
     transform: translateZ(0)
 }
 
-.news-item__picture:after {
+.acf-block-preview .news-item__picture:after {
     content: " ";
     display: block;
     visibility: hidden;
     padding-bottom: 62.1052631579%
 }
 
-.news-item__picture .h-object-fit {
+.acf-block-preview .news-item__picture .h-object-fit {
     bottom: 0;
     right: 0;
     width: 100%;
@@ -15158,15 +15164,15 @@ textarea.form-control {
     transform: translateZ(0)
 }
 
-.news-item__picture img,
-.news-item__picture picture {
+.acf-block-preview .news-item__picture img,
+.acf-block-preview .news-item__picture picture {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-transition: .5s;
     transition: .5s
 }
 
-.news-item__info {
+.acf-block-preview .news-item__info {
     display: flex;
     flex-direction: column;
     -webkit-box-align: start;
@@ -15183,21 +15189,21 @@ textarea.form-control {
 
 .article-landing ul li,
 .media-article__tags,
-.news-item__info-main {
+.acf-block-preview .news-item__info-main {
     display: -webkit-box;
     display: -ms-flexbox
 }
 
-.news-item__info-top span {
+.acf-block-preview .news-item__info-top span {
     font-family: "Bai Jamjuree";
     font-weight: 700;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 12px;
     text-transform: uppercase;
     color: #2a5dea
 }
 
-.news-item__info-main {
+.acf-block-preview .news-item__info-main {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -15208,7 +15214,7 @@ textarea.form-control {
     align-items: flex-start
 }
 
-.news-item__info-main h4 {
+.acf-block-preview .news-item__info-main h4 {
     font-weight: 600;
     color: #242833;
     font-size: 20px !important;
@@ -15219,11 +15225,11 @@ textarea.form-control {
     letter-spacing: -.2px
 }
 
-.news-item__info-main h4:not(:last-child) {
+.acf-block-preview .news-item__info-main h4:not(:last-child) {
     margin-bottom: 15px;
 }
 
-.news-item__info-main time {
+.acf-block-preview .news-item__info-main time {
     font-weight: 700 !important;
     font-size: 13px;
     line-height: 16px;
@@ -15231,7 +15237,7 @@ textarea.form-control {
     color: #b8bdcc
 }
 
-.news+.news {
+.acf-block-preview .news+.news {
     padding-top: 5rem
 }
 
@@ -16286,7 +16292,7 @@ textarea.form-control {
         padding: 6rem 3rem 3rem
     }
     .info-item__picture,
-    .news__link .button,
+    .acf-block-preview .news__link .button,
     .stages-collage .product {
         width: 100%
     }
@@ -16316,7 +16322,7 @@ textarea.form-control {
     }
     .about__article__link,
     .about__video:after,
-    .news__top .link-line {
+    .acf-block-preview .news__top .link-line {
         display: none
     }
     .about__content-tech-line>.icon {
@@ -16397,16 +16403,16 @@ textarea.form-control {
     .partner-item {
         width: 50%
     }
-    .news {
+    .acf-block-preview .news {
         padding-top: 10rem
     }
-    .news:not(:last-child) {
+    .acf-block-preview .news:not(:last-child) {
         padding-bottom: 5rem
     }
-    .main--white .news:not(:last-child) {
+    .acf-block-preview .main--white .news:not(:last-child) {
         padding-bottom: 2rem
     }
-    .news__top.news__top--mobileCol {
+    .acf-block-preview .news__top.news__top--mobileCol {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -16418,15 +16424,15 @@ textarea.form-control {
         -ms-flex-pack: start;
         justify-content: flex-start
     }
-    .news__top.news__top--mobileCol h2 {
+    .acf-block-preview .news__top.news__top--mobileCol h2 {
         margin-bottom: 2rem
     }
-    .news__top.news__top--mobileCol .link-line {
+    .acf-block-preview .news__top.news__top--mobileCol .link-line {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex
     }
-    .news__collage:not(:last-child) {
+    .acf-block-preview .news__collage:not(:last-child) {
         margin-bottom: 1rem
     }
     .landing-video video {
@@ -16763,22 +16769,22 @@ textarea.form-control {
     .partners:not(:last-child) {
         margin-bottom: 20px;
     }
-    .news__collage .news-banner {
+    .acf-block-preview .news__collage .news-banner {
         min-height: 320px;
     }
-    .news-banner__info {
+    .acf-block-preview .news-banner__info {
         padding: 30px 20px;
     }
-    .news-banner__info-main h4 {
+    .acf-block-preview .news-banner__info-main h4 {
         font-size: 17px;
     }
-    .news-item__picture:after {
+    .acf-block-preview .news-item__picture:after {
         padding-bottom: 56.1194029851%
     }
-    .news-item__info {
+    .acf-block-preview .news-item__info {
         padding: 20px;
     }
-    .news-item__info-main h4 {
+    .acf-block-preview .news-item__info-main h4 {
         font-size: 1.7rem
     }
     .launch-block [class^=" col-"] .product,

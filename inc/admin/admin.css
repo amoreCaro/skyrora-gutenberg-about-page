@@ -25,6 +25,12 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
     font-size: 18px;
 }
 
+/* Core Heading block — editor canvas only */
+.editor-styles-wrapper .acf-block-preview .news .news__top h1 {
+    font-size: 40px !important;
+    line-height: 48px !important;
+}
+
 .wp-block-group,
 .wp-block-columns,
 .wp-block-column,
@@ -65,9 +71,8 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
 }
 
 /*
- * Editor only: .banner__video is position:absolute; height:85vh on the
- * frontend (spills under the next section). Clip it here so it does not
- * cover the quote/paragraph block below in Gutenberg.
+ * Editor only: clip absolute .banner__video so it does not cover
+ * the next block. Heights stay in px (see blocks.css).
  */
 .block-editor-block-list__block.wp-block-acf-hero,
 .wp-block-acf-hero,
@@ -76,8 +81,24 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
     overflow: hidden !important;
 }
 
+.acf-block-preview .banner.banner--landing {
+    height: 670px;
+}
+
 .acf-block-preview .banner.banner--landing .banner__video {
     height: 100%;
+}
+
+@media (min-width: 1220px) {
+    .acf-block-preview .banner.banner--landing {
+        height: 740px;
+    }
+}
+
+@media (max-width: 767px) {
+    .acf-block-preview .banner.banner--landing {
+        height: 520px;
+    }
 }
 
 /* 150px = 15rem at frontend html font-size: 10px */
@@ -136,12 +157,11 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
 }
 
 /* ------------------------------------------------------------------ */
-/* Article landing — editor-only spacing (inside ACF preview iframe)   */
-/* Restored from fix/quote-block; keep alongside title block margins.  */
+/* Quote only — editor top spacing (do not apply to paragraph block)   */
 /* .acf-block-component/.acf-block-body live outside the canvas iframe */
 /* so they cannot target <article> — use .acf-block-preview instead    */
 /* ------------------------------------------------------------------ */
-.acf-block-preview article.article-landing.article-landing--long {
+.acf-block-preview article.article-landing.article-landing--quote {
     padding-top: 150px;
 }
 
@@ -204,6 +224,20 @@ h1.wp-block.wp-block-post-title.block-editor-block-list__block.editor-post-title
     margin-right: 20px;
     margin-top: 10px;
     flex-shrink: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero page nav — hover via li; <a> stays pointer-events:none         */
+/* Match frontend .banner__content-list ul a:hover (blue underline)    */
+/* ------------------------------------------------------------------ */
+.acf-block-preview .banner__content-list ul li:hover a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+
+.acf-block-preview .banner__content-list ul li:hover a:after,
+.acf-block-preview .banner__content-list ul li:hover a:before {
+    width: 50%;
+    opacity: 1;
 }
 
 /* ------------------------------------------------------------------ */
