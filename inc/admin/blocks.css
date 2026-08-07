@@ -605,8 +605,8 @@ mark {
     border-radius: .25rem
 }
 
-.container,
-.container-fluid {
+.acf-block-preview .container,
+.acf-block-preview .container-fluid {
     width: 100%;
     padding-right: 10px;
     padding-left: 10px
@@ -658,17 +658,25 @@ pre code {
     overflow-y: scroll
 }
 
-.container {
-    max-width: 101.1rem
+.acf-block-preview .container {
+    max-width: 1011px;
 }
 
 @media (min-width:1025px) {
-    .container {
-        max-width: 101.1rem
+    .acf-block-preview .container {
+        max-width: 1011px;
     }
 }
+@media (min-width: 1025px) {
+    .acf-block-preview  .banner__content-logo {
+        margin-bottom: 28px;
+    }
+}
+.acf-block-preview  .banner__content-logo__item {
+    margin-right: 35px;
+}
 
-.row {
+.acf-block-preview .row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6727,11 +6735,11 @@ h1 {
     }
 }
 
-.constructor-columns [class^=" col-"],
-.constructor-columns [class^=col-],
-.footer .breadcrumbs:not(:last-child),
-.section-top:not(:last-child),
-h1:not(:last-child) {
+.acf-block-preview .constructor-columns [class^=" col-"],
+.acf-block-preview.constructor-columns [class^=col-],
+.acf-block-preview .footer .breadcrumbs:not(:last-child),
+.acf-block-preview.section-top:not(:last-child),
+.acf-block-preview h1:not(:last-child) {
     margin-bottom: 50px;
 }
 
@@ -7051,7 +7059,7 @@ h6:not(:last-child) {
     padding-top: 150px;
 }
 
-.categories {
+.acf-block-preview .categories {
     padding-bottom: 950px;
 }
 
@@ -12063,7 +12071,7 @@ textarea.form-control {
 }
 
 @media (min-width:1220px) {
-    .container {
+    .acf-block-preview  .container {
         max-width: 1200px
     }
     .col-xl {
