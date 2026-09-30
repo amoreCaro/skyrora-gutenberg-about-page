@@ -140,6 +140,17 @@ function theme_acf_blocks() {
     ));
 
     acf_register_block_type(array(
+        'name'            => 'product-banner',
+        'title'           => 'Block - Product Banner',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/product/banner/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['banner'],
+        'keywords'        => array('product', 'banner'),
+        'enqueue_style'   => get_template_directory_uri() . '/blocks/banner/style.css',
+    ));
+
+    acf_register_block_type(array(
         'name'            => 'products',
         'title'           => 'Block - Products',
         'category'        => 'skyrora',

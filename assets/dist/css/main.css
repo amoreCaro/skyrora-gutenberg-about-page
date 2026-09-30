@@ -1026,9 +1026,6 @@ video {
 .grid{
   display: grid;
 }
-.contents{
-  display: contents;
-}
 .hidden{
   display: none;
 }
@@ -2160,9 +2157,6 @@ video {
 }
 .uppercase{
   text-transform: uppercase;
-}
-.lowercase{
-  text-transform: lowercase;
 }
 .capitalize{
   text-transform: capitalize;
