@@ -310,6 +310,7 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
     return array(
         'acf/banner',
         'acf/product-banner',
+        'acf/stages-list',
         'acf/products',
         'acf/innovation',
         'acf/dedicated',

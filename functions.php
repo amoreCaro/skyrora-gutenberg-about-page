@@ -11,7 +11,6 @@ define('PATH_URL', esc_url( get_template_directory_uri()));
 define('SITE', preg_replace('/https?\:\/\/(.+?)\//', '/', get_home_url()));
 define('HOME', preg_replace('/https?\:\/\/(.+?)\//', '/', get_home_url("home")));
 
-require PATH . '/inc/acf.php';
 require PATH . '/inc/setup.php';
 require PATH . '/inc/enqueues.php';
 require PATH . '/inc/helpers.php';

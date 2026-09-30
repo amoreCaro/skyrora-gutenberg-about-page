@@ -126,6 +126,12 @@ function theme_acf_blocks() {
             array('path', array('d' => 'm16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5')),
             array('rect', array('x' => '2', 'y' => '6', 'width' => '14', 'height' => '12', 'rx' => '2')),
         ))),
+        'stages-list' => skyrora_block_icon(skyrora_icon_paths(array(
+            array('rect', array('x' => '3', 'y' => '3', 'width' => '7', 'height' => '7', 'rx' => '1')),
+            array('rect', array('x' => '14', 'y' => '3', 'width' => '7', 'height' => '7', 'rx' => '1')),
+            array('rect', array('x' => '3', 'y' => '14', 'width' => '7', 'height' => '7', 'rx' => '1')),
+            array('rect', array('x' => '14', 'y' => '14', 'width' => '7', 'height' => '7', 'rx' => '1')),
+        ))),
     );
 
     acf_register_block_type(array(
@@ -137,6 +143,16 @@ function theme_acf_blocks() {
         'icon'            => $icons['banner'],
         'keywords'        => array('banner'),
         'enqueue_style'   => get_template_directory_uri() . '/blocks/banner/style.css',
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'stages-list',
+        'title'           => 'Block - Stages List',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/product/stages-list/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['stages-list'],
+        'keywords'        => array('stages', 'product', 'list'),
     ));
 
     acf_register_block_type(array(
