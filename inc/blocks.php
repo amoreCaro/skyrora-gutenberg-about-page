@@ -177,6 +177,16 @@ function theme_acf_blocks() {
     ));
 
     acf_register_block_type(array(
+        'name'            => 'look-other-products',
+        'title'           => 'Block - Look Other Products',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/product/look-other-products/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['products'],
+        'keywords'        => array('product', 'look', 'other'),
+    ));
+
+    acf_register_block_type(array(
         'name'            => 'products',
         'title'           => 'Block - Products',
         'category'        => 'skyrora',
