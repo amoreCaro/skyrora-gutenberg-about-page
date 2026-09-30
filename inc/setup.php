@@ -311,6 +311,7 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
         'acf/banner',
         'acf/product-banner',
         'acf/stages-list',
+        'acf/product-news',
         'acf/products',
         'acf/innovation',
         'acf/dedicated',

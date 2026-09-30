@@ -167,6 +167,16 @@ function theme_acf_blocks() {
     ));
 
     acf_register_block_type(array(
+        'name'            => 'product-news',
+        'title'           => 'Block - Read About Rockets',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/product/news/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['news'],
+        'keywords'        => array('product', 'news', 'rockets'),
+    ));
+
+    acf_register_block_type(array(
         'name'            => 'products',
         'title'           => 'Block - Products',
         'category'        => 'skyrora',
