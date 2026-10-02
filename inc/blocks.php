@@ -132,6 +132,16 @@ function theme_acf_blocks() {
             array('rect', array('x' => '3', 'y' => '14', 'width' => '7', 'height' => '7', 'rx' => '1')),
             array('rect', array('x' => '14', 'y' => '14', 'width' => '7', 'height' => '7', 'rx' => '1')),
         ))),
+        'button' => skyrora_block_icon(skyrora_icon_paths(array(
+            array('rect', array('x' => '3', 'y' => '8', 'width' => '18', 'height' => '8', 'rx' => '2')),
+            array('path', array('d' => 'm10 12 2 2 4-4')),
+        ))),
+        'table-two-col' => skyrora_block_icon(skyrora_icon_paths(array(
+            array('path', array('d' => 'M12 3v18')),
+            array('rect', array('x' => '3', 'y' => '3', 'width' => '18', 'height' => '18', 'rx' => '2')),
+            array('path', array('d' => 'M3 9h18')),
+            array('path', array('d' => 'M3 15h18')),
+        ))),
     );
 
     acf_register_block_type(array(
@@ -174,6 +184,26 @@ function theme_acf_blocks() {
         'mode'            => 'preview',
         'icon'            => $icons['news'],
         'keywords'        => array('product', 'news', 'rockets'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'button',
+        'title'           => 'Block - Button',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/product/button/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['button'],
+        'keywords'        => array('button', 'link', 'popup'),
+    ));
+
+    acf_register_block_type(array(
+        'name'            => 'table-two-col',
+        'title'           => 'Block - Table Two Col',
+        'category'        => 'skyrora',
+        'render_template' => PATH . '/blocks/product/table-two-col/preview.php',
+        'mode'            => 'preview',
+        'icon'            => $icons['table-two-col'],
+        'keywords'        => array('table', 'two', 'column', 'product'),
     ));
 
     acf_register_block_type(array(

@@ -312,6 +312,8 @@ function theme_allowed_blocks($allowed_blocks, $editor_context)
         'acf/product-banner',
         'acf/stages-list',
         'acf/product-news',
+        'acf/button',
+        'acf/table-two-col',
         'acf/look-other-products',
         'acf/products',
         'acf/innovation',

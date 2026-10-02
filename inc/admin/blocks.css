@@ -16950,3 +16950,12 @@ textarea.form-control {
     }
 }
 
+/*
+ * Editor canvas only. rem follows the html root, not .acf-block-preview.
+ * Frontend html is 10px; the canvas iframe is not. wp-admin chrome uses
+ * html.wp-toolbar, so this does not shrink the editor UI.
+ */
+html:not(.wp-toolbar) {
+    font-size: 10px;
+}
+
